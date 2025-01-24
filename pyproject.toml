@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ggj2025"
+version = "0.1.0"
+description = "Our GGJ2025 game."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+#launch_game = ":main"
+launch_board_server = "ggj2025.wiiboard_server:main"
+
+[tool.poetry.dependencies]
+python = "3.10"
+pybluez = { git = "git+https://github.com/pybluez/pybluez.git#egg=pybluez" }
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
