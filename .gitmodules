@@ -1,3 +1,3 @@
-[submodule "ggj2025/wiiboard"]
-	path = ggj2025/wiiboard
+[submodule "ggj2025/wiiboard_server/wiiboard_server/wiiboard"]
+	path = ggj2025/wiiboard_server/wiiboard_server/wiiboard
 	url = git@github.com:MiningXL/wiiboard.git

@@ -1,4 +1,4 @@
-from ggj2025.wiiboard.wiiboard import Wiiboard, discover
+from wiiboard_server.wiiboard.wiiboard import Wiiboard, discover
 from threading import Thread
 import socket, time
 
