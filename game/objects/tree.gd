@@ -43,7 +43,7 @@ func recursiveAddSticks(limit: int, prevMesh: Node3D) -> void:
 	for i in range(rand):
 		var x_change = randf_range(-60, 60)
 		var z_change = randf_range(-60, 60)
-		var y_change = 180 if z_change<0 else 0 + x_change
+		var y_change = randf_range(0,360)
 		var rand_rotation = Vector3(x_change, y_change, z_change)
 		var new_stick = addStick(rand_rotation, sub_scale_vector, Vector3(0, branch_length, 0), true, false, true)
 		
