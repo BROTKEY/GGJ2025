@@ -5,7 +5,8 @@
 
 [node name="tree" type="Node3D"]
 script = ExtResource("1_sw2or")
-max_depth = 3
+mesh = ExtResource("2_014bi")
+max_depth = 2
 splits_min = 3
 splits_max = 5
-mesh = ExtResource("2_014bi")
+sub_scale_vector = Vector3(1, 1, 1)
