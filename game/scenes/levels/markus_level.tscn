@@ -1,9 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://c6b6uchgd58t5"]
 
+[ext_resource type="Environment" uid="uid://m8upo6o8q7kh" path="res://assets/defaul_env.tres" id="1_8jd6n"]
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_t6a6n"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_7exmy"]
 [ext_resource type="PackedScene" uid="uid://j74vsr7iyg0a" path="res://assets/models/Terrain.glb" id="3_on0cy"]
-[ext_resource type="PackedScene" uid="uid://ben12hprcoy31" path="res://assets/models/Duck.glb" id="5_rpqci"]
+[ext_resource type="PackedScene" uid="uid://ben12hprcoy31" path="res://assets/models/duck.glb" id="5_rpqci"]
 [ext_resource type="PackedScene" uid="uid://cwot5njavglae" path="res://assets/models/Rock.glb" id="6_yw1sc"]
 [ext_resource type="PackedScene" uid="uid://dq41u1lpo0o30" path="res://assets/models/Plant.glb" id="7_w2uen"]
 [ext_resource type="PackedScene" uid="uid://cbyuonndawlmx" path="res://assets/models/Leaf.glb" id="8_pfp4w"]
@@ -12,24 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://diy0vcjuyptnl" path="res://assets/models/Bow.glb" id="10_s30dn"]
 [ext_resource type="PackedScene" uid="uid://bv2u8k5davuip" path="res://assets/models/Kiste.glb" id="11_40w8o"]
 [ext_resource type="PackedScene" uid="uid://luqowrb52amr" path="res://assets/models/Suzanne.glb" id="12_d30pr"]
-
-[sub_resource type="Environment" id="Environment_qo5i4"]
-ambient_light_source = 2
-ambient_light_color = Color(0.205114, 0.708005, 0.662111, 1)
-ambient_light_energy = 0.83
-ssao_enabled = true
-ssao_intensity = 2.17
-sdfgi_read_sky_light = false
-glow_enabled = true
-glow_intensity = 0.22
-glow_strength = 0.78
-glow_blend_mode = 0
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.256524, 0.742443, 0.589227, 1)
-fog_depth_curve = 0.482968
-fog_depth_begin = 1.0
-fog_depth_end = 557.4
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ipnqn"]
 
@@ -49,12 +32,11 @@ light_color = Color(1, 1, 0.823529, 1)
 light_energy = 1.485
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qo5i4")
+environment = ExtResource("1_8jd6n")
 camera_attributes = SubResource("CameraAttributesPractical_ipnqn")
 
-[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("1_t6a6n")]
+[node name="Player" parent="." instance=ExtResource("1_t6a6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617342, 0)
-view = NodePath("../View")
 
 [node name="World" type="Node3D" parent="."]
 

@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://diupi7686o45v"]
+[gd_scene load_steps=10 format=3 uid="uid://diupi7686o45v"]
 
+[ext_resource type="Environment" uid="uid://m8upo6o8q7kh" path="res://assets/defaul_env.tres" id="2_6ru0i"]
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="3_puca5"]
 [ext_resource type="ArrayMesh" uid="uid://c8uy7p77j8fju" path="res://assets/meshes/Plant.res" id="5_ohu7x"]
 [ext_resource type="ArrayMesh" uid="uid://cy8plnvlf83rn" path="res://assets/meshes/stone.res" id="5_sc0gd"]
 [ext_resource type="PackedScene" uid="uid://d05nrivbbs140" path="res://objects/tree.tscn" id="6_s00wv"]
+[ext_resource type="ArrayMesh" uid="uid://blpmhcrqfcyo7" path="res://assets/meshes/Leaf_001.mesh" id="7_u8vf3"]
 [ext_resource type="Script" path="res://scenes/levels/footpath.gd" id="8_ojlaw"]
 [ext_resource type="ArrayMesh" uid="uid://bjou77kfn1vmn" path="res://assets/meshes/Terrain.res" id="9_yxnxr"]
-
-[sub_resource type="Environment" id="Environment_jxo7o"]
 
 [sub_resource type="Curve3D" id="Curve3D_mf00p"]
 bake_interval = 0.01
@@ -23,7 +23,7 @@ point_count = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97726, 0.919242, 8.30488)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jxo7o")
+environment = ExtResource("2_6ru0i")
 
 [node name="objects" type="Node3D" parent="WorldEnvironment"]
 
@@ -69,6 +69,10 @@ y_rand_factor = 1
 transform = Transform3D(0.35, 0, 0, 0, 0.4, 0, 0, 0, 1, 2.36096, 0, -15.7424)
 use_collision = true
 mesh = ExtResource("9_yxnxr")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment/ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18212, 0)
+mesh = ExtResource("7_u8vf3")
 
 [node name="tree" parent="WorldEnvironment" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.185, 0, 0, 0, 0.185, 0, 0, 0, 0.185, 0, 1.05952, -5.92497)
