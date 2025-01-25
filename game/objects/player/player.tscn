@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cy5upavlqi6hn"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_iasqv"]
-[ext_resource type="PackedScene" uid="uid://ym784c0h43t1" path="res://assets/models/duck_internet.glb" id="2_xmu7f"]
+[ext_resource type="PackedScene" uid="uid://dm6pofr32mt0n" path="res://assets/models/duck_internet.glb" id="2_xmu7f"]
 [ext_resource type="Shader" path="res://shaders/bubble.gdshader" id="3_rocf5"]
 [ext_resource type="Texture2D" uid="uid://veuoliraltao" path="res://assets/textures/colornoise.png" id="4_mybdu"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="5_j56p1"]
@@ -74,7 +74,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("SphereShape3D_b7wts")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 0.911604, -0.411069, 0, 0.411069, 0.911604, 0, 2, 0)
 top_level = true
 script = ExtResource("5_j56p1")
 target = NodePath("..")
