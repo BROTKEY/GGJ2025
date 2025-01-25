@@ -6,10 +6,12 @@ authors = ["Hwawooook <hwawooook@miningxl.dev>"]
 
 [tool.poetry.scripts]
 launch_board_server = "wiiboard_server.wiiboard_server:main"
+launch_plotter = "wiiboard_server.wiiboard_plotter:main"
 
 [tool.poetry.dependencies]
 python = "3.10"
 pybluez = { git = "git+https://github.com/pybluez/pybluez.git#egg=pybluez" }
+matplotlib = "3.10.0"
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.4"

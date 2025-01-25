@@ -33,13 +33,18 @@ class BoardSocket(Wiiboard):
     def conn_loop(self, conn, addr):
         next_update = time.time()
         while self.running:
-            if time.time() > next_update:
-                data = ";".join(str(i) for i in self.corners.values()) + "\n"
-                conn.send(bytes(data, "utf-8"))
-                next_update = time.time() + TRANSMIT_RATE_S
-
             if not conn:
                 break
+
+            if time.time() > next_update:
+                data = ";".join(str(i) for i in self.corners.values())
+                data = chr(len(data)) + "\0\0\0" + data
+                try: 
+                    conn.send(bytes(data, "utf-8"))
+                except:
+                    print("Broken Pipe")
+                    break
+                next_update = time.time() + TRANSMIT_RATE_S
             
         print(f"{addr} disconnected!")
 
@@ -58,3 +63,6 @@ def main():
     
     server = BoardSocket(wii_boards[0])
     server.run()
+
+if __name__ == "__main__":
+    main()
