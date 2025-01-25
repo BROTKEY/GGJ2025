@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgnoriscl3dvy"
-path="res://.godot/imported/Rock.glb-58ff5d7ce9fc0fefec313ac36f82863b.scn"
+uid="uid://devcne6faapk1"
+path="res://.godot/imported/terrain_flat.glb-acdb2fb1220152057685d3ffd69b2fcd.scn"
 
 [deps]
 
-source_file="res://assets/models/Rock.glb"
-dest_files=["res://.godot/imported/Rock.glb-58ff5d7ce9fc0fefec313ac36f82863b.scn"]
+source_file="res://assets/models/terrain_flat.glb"
+dest_files=["res://.godot/imported/terrain_flat.glb-acdb2fb1220152057685d3ffd69b2fcd.scn"]
 
 [params]
 
@@ -31,18 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"Rock_Cube_008": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://assets/models/meshes/Rock.res"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1
