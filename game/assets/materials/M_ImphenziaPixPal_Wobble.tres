@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dds37j3og3pt5"]
+
+[ext_resource type="Shader" uid="uid://b0uox35f3xrui" path="res://shaders/VS_ImphenziaPixPal_Wobble.tres" id="1_2dmff"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2dmff")
+shader_parameter/wobble_strength = 1.5
