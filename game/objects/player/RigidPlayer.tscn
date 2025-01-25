@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpeqs2pnagtb4"]
+[gd_scene load_steps=8 format=3 uid="uid://cpeqs2pnagtb4"]
 
 [ext_resource type="Script" path="res://objects/player/rigid_player.gd" id="1_4ba6p"]
 [ext_resource type="PackedScene" uid="uid://b12cq1c3j10ak" path="res://assets/models/duck_internet.glb" id="1_4kxk3"]
 [ext_resource type="Material" uid="uid://7oma41dwvihk" path="res://objects/player/bubble_material.tres" id="2_vadav"]
-[ext_resource type="Script" path="res://scripts/view.gd" id="3_ar0b2"]
+[ext_resource type="Script" path="res://scripts/wiiboard.gd" id="4_sfcjy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mkwjj"]
+friction = 0.6
+bounce = 0.8
 
 [sub_resource type="SphereMesh" id="SphereMesh_s1muj"]
 
@@ -11,8 +15,14 @@
 radius = 0.45
 
 [node name="RigidPlayer" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_mkwjj")
 lock_rotation = true
 script = ExtResource("1_4ba6p")
+movement_speed = 10000
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 0, 3, -3)
+current = true
 
 [node name="Model" type="Node3D" parent="."]
 
@@ -30,9 +40,5 @@ mesh = SubResource("SphereMesh_s1muj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("SphereShape3D_8db11")
 
-[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("3_ar0b2")
-target = NodePath("..")
-
-[node name="Camera" type="Camera3D" parent="View"]
-current = true
+[node name="Wiiboard" type="Node" parent="."]
+script = ExtResource("4_sfcjy")
