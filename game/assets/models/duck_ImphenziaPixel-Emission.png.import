@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cokrybdh117b"
-path.s3tc="res://.godot/imported/Duck_ImphenziaPixel-Emission.png-928f68d0f5ceec6622ac5128c5f22894.s3tc.ctex"
+path.s3tc="res://.godot/imported/duck_ImphenziaPixel-Emission.png-a1e8ccb11b18a6601497627e2b07abba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/Duck_ImphenziaPixel-Emission.png"
-dest_files=["res://.godot/imported/Duck_ImphenziaPixel-Emission.png-928f68d0f5ceec6622ac5128c5f22894.s3tc.ctex"]
+source_file="res://assets/models/duck_ImphenziaPixel-Emission.png"
+dest_files=["res://.godot/imported/duck_ImphenziaPixel-Emission.png-a1e8ccb11b18a6601497627e2b07abba.s3tc.ctex"]
 
 [params]
 

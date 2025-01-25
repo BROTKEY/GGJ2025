@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://do5n7t203jqph"
-path="res://.godot/imported/Duck.glb-571721c5fb6c43520e3ab398e523ee1f.scn"
+path="res://.godot/imported/duck.glb-a3fd80177e030e457eb3e4e2512d72f6.scn"
 
 [deps]
 
-source_file="res://assets/models/Duck.glb"
-dest_files=["res://.godot/imported/Duck.glb-571721c5fb6c43520e3ab398e523ee1f.scn"]
+source_file="res://assets/models/duck.glb"
+dest_files=["res://.godot/imported/duck.glb-a3fd80177e030e457eb3e4e2512d72f6.scn"]
 
 [params]
 
