@@ -2988,6 +2988,12 @@ use_collision = true
 mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
 
+[node name="Bubbles" type="CSGMesh3D" parent="WorldEnvironment2/objects/Bubbles"]
+transform = Transform3D(0.216342, 0.0353921, 0.160653, -0.137537, -0.100957, 0.209554, 0.0909068, -0.23697, -0.0652824, -77.4196, 0.67264, 65.4917)
+use_collision = true
+mesh = ExtResource("9_imask")
+material = ExtResource("6_b6g6a")
+
 [node name="air" type="CSGSphere3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94769, 1.41671, -6.79172)
 radius = 0.142896
