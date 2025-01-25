@@ -1,0 +1,13 @@
+[gd_resource type="Environment" format=3 uid="uid://dk0cnvoagmfpp"]
+
+[resource]
+ambient_light_source = 2
+ambient_light_color = Color(0.205114, 0.708005, 0.662111, 1)
+ambient_light_energy = 0.83
+tonemap_exposure = 0.83
+ssao_enabled = true
+ssao_intensity = 2.17
+ssil_enabled = true
+sdfgi_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.256524, 0.742443, 0.589227, 1)
