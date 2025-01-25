@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=19 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="Environment" uid="uid://m8upo6o8q7kh" path="res://assets/defaul_env.tres" id="1_8jd6n"]
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_t6a6n"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://diy0vcjuyptnl" path="res://assets/models/Bow.glb" id="10_s30dn"]
 [ext_resource type="PackedScene" uid="uid://bv2u8k5davuip" path="res://assets/models/Kiste.glb" id="11_40w8o"]
 [ext_resource type="PackedScene" uid="uid://luqowrb52amr" path="res://assets/models/Suzanne.glb" id="12_d30pr"]
+[ext_resource type="PackedScene" uid="uid://c4go6scqtfhvm" path="res://assets/models/Qualle.glb" id="13_a08fj"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ipnqn"]
 
@@ -29,7 +30,7 @@ points = PackedVector3Array(-1.6325, -0.05, -1.6225, -1.6325, 0.05, -1.6225, 1.6
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.9993, 0.00718898, 0.0367139, -0.0374111, 0.192028, 0.980676, -7.87567e-09, -0.981363, 0.192162, 0, 15.0407, 0)
 light_color = Color(1, 1, 0.823529, 1)
-light_energy = 1.485
+light_energy = 0.515
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_8jd6n")
@@ -126,3 +127,6 @@ transform = Transform3D(-0.926279, -0.167664, -0.337486, -0.237652, 0.954928, 0.
 
 [node name="Suzanne" parent="." instance=ExtResource("12_d30pr")]
 transform = Transform3D(-0.899786, 0, -0.436331, 0, 1, 0, 0.436331, 0, -0.899786, -21.5484, 2.15528, 17.1004)
+
+[node name="Qualle" parent="." instance=ExtResource("13_a08fj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 15, 49)

@@ -30,9 +30,9 @@ func iterate(node: Node) -> void:
 
 			# Loop through mesh materials looking for a PixPal
 			for index in range(mesh.get_surface_count()):
-				var material = mesh.get_surface_material(index)
+				var material = mesh.surface_get_material(index)
 				if material and material.resource_name.ends_with('PixPal'):
-					mesh.set_surface_material(index, get_pixpal_material())
+					mesh.surface_set_material(index, get_pixpal_material())
 
 	# Recursively process child nodes
 	for child in node.get_children():
