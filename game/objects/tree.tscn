@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d05nrivbbs140"]
+
+[ext_resource type="Script" path="res://objects/tree.gd" id="1_sw2or"]
+[ext_resource type="ArrayMesh" uid="uid://c8uy7p77j8fju" path="res://assets/meshes/Plant.res" id="2_014bi"]
+
+[node name="tree" type="Node3D"]
+script = ExtResource("1_sw2or")
+max_depth = 3
+splits_min = 3
+splits_max = 5
+mesh = ExtResource("2_014bi")
