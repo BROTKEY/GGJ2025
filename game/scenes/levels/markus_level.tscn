@@ -1,23 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_t6a6n"]
+[ext_resource type="Environment" uid="uid://dk0cnvoagmfpp" path="res://scenes/levels/markus_level_env.tres" id="1_v32u8"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_7exmy"]
-[ext_resource type="PackedScene" uid="uid://bbgthdq3tfmbt" path="res://assets/models/Terrain.glb" id="3_on0cy"]
-[ext_resource type="PackedScene" uid="uid://du75cd2raxwyf" path="res://assets/models/Duck.001.glb" id="4_xl5r6"]
-[ext_resource type="PackedScene" uid="uid://do5n7t203jqph" path="res://assets/models/Duck.glb" id="5_rpqci"]
-[ext_resource type="PackedScene" uid="uid://df3oibopksj6j" path="res://assets/models/Rock.glb" id="6_yw1sc"]
-[ext_resource type="PackedScene" uid="uid://p3v1k35052xa" path="res://assets/models/Plant.glb" id="7_w2uen"]
-
-[sub_resource type="Environment" id="Environment_qo5i4"]
-ambient_light_source = 2
-ambient_light_color = Color(0.205114, 0.708005, 0.662111, 1)
-ambient_light_energy = 0.83
-tonemap_exposure = 0.83
-ssao_enabled = true
-ssao_intensity = 2.17
-ssil_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.256524, 0.742443, 0.589227, 1)
+[ext_resource type="PackedScene" uid="uid://clpj4j5seygo6" path="res://assets/models/Terrain.glb" id="3_on0cy"]
+[ext_resource type="PackedScene" uid="uid://bn3x6nfww08vg" path="res://assets/models/Duck.001.glb" id="4_xl5r6"]
+[ext_resource type="PackedScene" uid="uid://bee08tatcil5g" path="res://assets/models/duck.glb" id="5_rpqci"]
+[ext_resource type="PackedScene" uid="uid://dgnoriscl3dvy" path="res://assets/models/Rock.glb" id="6_yw1sc"]
+[ext_resource type="PackedScene" uid="uid://cdg5l00ywwjqy" path="res://assets/models/Plant.glb" id="7_w2uen"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ipnqn"]
 
@@ -35,12 +25,11 @@ light_color = Color(1, 1, 0.823529, 1)
 light_energy = 1.485
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qo5i4")
+environment = ExtResource("1_v32u8")
 camera_attributes = SubResource("CameraAttributesPractical_ipnqn")
 
-[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("1_t6a6n")]
+[node name="Player" parent="." instance=ExtResource("1_t6a6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617342, 0)
-view = NodePath("../View")
 
 [node name="World" type="Node3D" parent="."]
 

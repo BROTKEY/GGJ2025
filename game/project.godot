@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="game"
-run/main_scene="res://scenes/levels/level_1.tscn"
+run/main_scene="res://scenes/levels/level_2.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/pixpal_tools/plugin.cfg")
+
+[importer_defaults]
+
+animation_library={
+"gltf/embedded_image_handling": 0
+}
 
 [input]
 

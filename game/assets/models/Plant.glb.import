@@ -32,8 +32,14 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
+"materials": {
+"ImphenziaPixPal": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/meshes/Plant.res"
+}
+},
 "meshes": {
-"Plant_Cylinder_011": {
+"Plant_Cylinder_013": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
