@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bn3x6nfww08vg"
-path="res://.godot/imported/Duck.001.glb-2f50522525d2603baa6d31e0d7ee9ea6.scn"
+uid="uid://caupehqq45uwa"
+path="res://.godot/imported/Column.glb-1a578a15cfeda5eba7a80202ab8aad54.scn"
 
 [deps]
 
-source_file="res://assets/models/Duck.001.glb"
-dest_files=["res://.godot/imported/Duck.001.glb-2f50522525d2603baa6d31e0d7ee9ea6.scn"]
+source_file="res://assets/models/Column.glb"
+dest_files=["res://.godot/imported/Column.glb-1a578a15cfeda5eba7a80202ab8aad54.scn"]
 
 [params]
 
@@ -33,4 +33,4 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clpj4j5seygo6"
+uid="uid://j74vsr7iyg0a"
 path="res://.godot/imported/Terrain.glb-4ede13a2537d7ddcd00138256e710b74.scn"
 
 [deps]
@@ -45,4 +45,4 @@ _subresources={
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1
