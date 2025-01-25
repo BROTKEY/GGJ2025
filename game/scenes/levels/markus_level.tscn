@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=18 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_t6a6n"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_7exmy"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://caupehqq45uwa" path="res://assets/models/Column.glb" id="9_of2f6"]
 [ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres" id="9_xf0pk"]
 [ext_resource type="PackedScene" uid="uid://diy0vcjuyptnl" path="res://assets/models/Bow.glb" id="10_s30dn"]
+[ext_resource type="PackedScene" uid="uid://bv2u8k5davuip" path="res://assets/models/Kiste.glb" id="11_40w8o"]
+[ext_resource type="PackedScene" uid="uid://luqowrb52amr" path="res://assets/models/Suzanne.glb" id="12_d30pr"]
 
 [sub_resource type="Environment" id="Environment_qo5i4"]
 ambient_light_source = 2
@@ -25,8 +27,7 @@ glow_blend_mode = 0
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.256524, 0.742443, 0.589227, 1)
-fog_density = 1.0
-fog_depth_curve = 0.34151
+fog_depth_curve = 0.482968
 fog_depth_begin = 1.0
 fog_depth_end = 557.4
 
@@ -137,3 +138,9 @@ transform = Transform3D(0.926902, 0.316773, -0.201267, -0.362873, 0.893313, -0.2
 
 [node name="Bow" parent="." instance=ExtResource("10_s30dn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6637, 14.5673, 6.82517)
+
+[node name="Kiste" parent="." instance=ExtResource("11_40w8o")]
+transform = Transform3D(-0.926279, -0.167664, -0.337486, -0.237652, 0.954928, 0.177861, 0.292454, 0.244953, -0.924375, -20.5808, 0.881639, 17.469)
+
+[node name="Suzanne" parent="." instance=ExtResource("12_d30pr")]
+transform = Transform3D(-0.899786, 0, -0.436331, 0, 1, 0, 0.436331, 0, -0.899786, -21.5484, 2.15528, 17.1004)
