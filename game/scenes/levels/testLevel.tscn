@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=7 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_x761p"]
 
@@ -12,10 +12,16 @@ glow_enabled = true
 fog_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_dlptl"]
-size = Vector3(3.265, 0.1, 3.245)
+size = Vector3(10.44, 0.1, 38.085)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gul8t"]
-points = PackedVector3Array(-1.6325, -0.05, -1.6225, -1.6325, 0.05, -1.6225, 1.6325, -0.05, -1.6225, -1.6325, -0.05, 1.6225, -1.6325, 0.05, 1.6225, 1.6325, 0.05, -1.6225, 1.6325, -0.05, 1.6225, 1.6325, 0.05, 1.6225)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wrogb"]
+points = PackedVector3Array(5.22, 0.05, 19.0425, 5.22, -0.05, 19.0425, 5.22, 0.05, -19.0425, -5.22, 0.05, 19.0425, -5.22, -0.05, 19.0425, 5.22, -0.05, -19.0425, -5.22, 0.05, -19.0425, -5.22, -0.05, -19.0425)
+
+[sub_resource type="PrismMesh" id="PrismMesh_wq68l"]
+size = Vector3(3.245, 1.11, 2.85)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_grj1j"]
+points = PackedVector3Array(-1.6225, -0.555, -1.425, -1.6225, -0.555, 1.425, -1.19209e-07, 0.555, -1.425, 1.6225, -0.555, -1.425, 1.6225, -0.555, 1.425, -1.19209e-07, 0.555, 1.425)
 
 [node name="TestLevel" type="Node3D"]
 
@@ -23,7 +29,7 @@ points = PackedVector3Array(-1.6325, -0.05, -1.6225, -1.6325, 0.05, -1.6225, 1.6
 environment = SubResource("Environment_gc5qs")
 
 [node name="Player" parent="." instance=ExtResource("1_x761p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617342, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.396472, 0)
 
 [node name="World" type="Node3D" parent="."]
 
@@ -33,7 +39,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617342, 0)
 mesh = SubResource("BoxMesh_dlptl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platform"]
-shape = SubResource("ConvexPolygonShape3D_gul8t")
+shape = SubResource("ConvexPolygonShape3D_wrogb")
+
+[node name="rampe" type="StaticBody3D" parent="World"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/rampe"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -9.87358)
+mesh = SubResource("PrismMesh_wq68l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/rampe"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -9.87358)
+shape = SubResource("ConvexPolygonShape3D_grj1j")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.88718, -0.428649, -0.170797, 0, -0.370152, 0.928971, -0.461423, -0.824165, -0.328392, 0, 11.441, 0)
