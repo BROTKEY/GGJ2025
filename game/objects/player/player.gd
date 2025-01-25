@@ -65,7 +65,7 @@ func _physics_process(delta):
 	# Animation when landing
 
 	if is_on_floor() and gravity > 2 and !previously_floored:
-		model.scale = Vector3(1.25, 0.75, 1.25)
+		model.scale = Vector3(1.4, 0.6, 1.4)
 #		Audio.play("res://sounds/land.ogg")
 
 	previously_floored = is_on_floor()
@@ -140,7 +140,7 @@ func jump():
 
 	gravity = -jump_strength
 
-	model.scale = Vector3(0.5, 1.5, 0.5)
+	model.scale = Vector3(0.75, 1.25, 0.75)
 
 	if jump_single:
 		jump_single = false;

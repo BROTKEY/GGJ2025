@@ -20,6 +20,15 @@ environment = SubResource("Environment_gc5qs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617342, 0)
 view = NodePath("../View")
 
+[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("2_frg1a")
+target = NodePath("../Player")
+
+[node name="Camera" type="Camera3D" parent="View"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, 0, 1, 0, 0, 0)
+current = true
+
 [node name="World" type="Node3D" parent="."]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World"]
@@ -29,11 +38,3 @@ mesh = SubResource("BoxMesh_dlptl")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="World/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gul8t")
-
-[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.907843, 0.419309, 0, -0.419309, 0.907843, 0, 0.743425, 0.193925)
-script = ExtResource("2_frg1a")
-target = NodePath("../Player")
-
-[node name="Camera" type="Camera3D" parent="View"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.931775, 1.95264)
