@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=15 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_t6a6n"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_7exmy"]
-[ext_resource type="PackedScene" uid="uid://bbgthdq3tfmbt" path="res://assets/models/Terrain.glb" id="3_on0cy"]
-[ext_resource type="PackedScene" uid="uid://du75cd2raxwyf" path="res://assets/models/Duck.001.glb" id="4_xl5r6"]
-[ext_resource type="PackedScene" uid="uid://do5n7t203jqph" path="res://assets/models/Duck.glb" id="5_rpqci"]
-[ext_resource type="PackedScene" uid="uid://df3oibopksj6j" path="res://assets/models/Rock.glb" id="6_yw1sc"]
-[ext_resource type="PackedScene" uid="uid://p3v1k35052xa" path="res://assets/models/Plant.glb" id="7_w2uen"]
+[ext_resource type="PackedScene" uid="uid://j74vsr7iyg0a" path="res://assets/models/Terrain.glb" id="3_on0cy"]
+[ext_resource type="PackedScene" uid="uid://ben12hprcoy31" path="res://assets/models/Duck.glb" id="5_rpqci"]
+[ext_resource type="PackedScene" uid="uid://cwot5njavglae" path="res://assets/models/Rock.glb" id="6_yw1sc"]
+[ext_resource type="PackedScene" uid="uid://dq41u1lpo0o30" path="res://assets/models/Plant.glb" id="7_w2uen"]
+[ext_resource type="PackedScene" uid="uid://cbyuonndawlmx" path="res://assets/models/Leaf.glb" id="8_pfp4w"]
+[ext_resource type="PackedScene" uid="uid://caupehqq45uwa" path="res://assets/models/Column.glb" id="9_of2f6"]
+[ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres" id="9_xf0pk"]
 
 [sub_resource type="Environment" id="Environment_qo5i4"]
 ambient_light_source = 2
@@ -16,8 +18,17 @@ tonemap_exposure = 0.83
 ssao_enabled = true
 ssao_intensity = 2.17
 ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 1.73
 fog_enabled = true
+fog_mode = 1
 fog_light_color = Color(0.256524, 0.742443, 0.589227, 1)
+fog_density = 1.0
+fog_depth_curve = 0.34151
+fog_depth_begin = 1.0
+fog_depth_end = 557.4
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ipnqn"]
 
@@ -26,6 +37,8 @@ size = Vector3(3.265, 0.1, 3.245)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gul8t"]
 points = PackedVector3Array(-1.6325, -0.05, -1.6225, -1.6325, 0.05, -1.6225, 1.6325, -0.05, -1.6225, -1.6325, -0.05, 1.6225, -1.6325, 0.05, 1.6225, 1.6325, 0.05, -1.6225, 1.6325, -0.05, 1.6225, 1.6325, 0.05, 1.6225)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7p7gg"]
 
 [node name="TestLevel" type="Node3D"]
 
@@ -84,11 +97,34 @@ transform = Transform3D(2.85043, 2.9925, 0.411037, 0.875619, -0.0961773, -2.6850
 [node name="Rock3" parent="." instance=ExtResource("6_yw1sc")]
 transform = Transform3D(-2.34989, 0.315511, 0.597063, -0.602491, -0.00312324, -2.3696, -0.305019, -2.42456, 0.0807492, -0.508463, -0.427664, 13.7078)
 
-[node name="Duck_001" parent="." instance=ExtResource("4_xl5r6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8835, 11.9998, -8.15357)
-
-[node name="Duck" parent="." instance=ExtResource("5_rpqci")]
-transform = Transform3D(0.998799, 0.0439507, -0.0216633, -0.0450181, 0.997656, -0.05153, 0.0193478, 0.0524433, 0.998436, -11.0113, 11.4256, -8.01251)
-
 [node name="Plant" parent="." instance=ExtResource("7_w2uen")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34072, 6.55072, 35.5336)
+
+[node name="Leaf" parent="." instance=ExtResource("8_pfp4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.4628, 35.8426, 4.79072)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(9.135, 0, 0, 0, 9.135, 0, 0, 0, 9.135, 0, 33.8562, 59.582)
+material_override = ExtResource("9_xf0pk")
+mesh = SubResource("BoxMesh_7p7gg")
+
+[node name="Duck2" parent="." instance=ExtResource("5_rpqci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7288, 5.98861, 13.3498)
+
+[node name="Leaf2" parent="." instance=ExtResource("8_pfp4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141.621, 48.4316, 1.76663)
+
+[node name="Rock5" parent="." instance=ExtResource("6_yw1sc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.734, 180.27, 41.9209)
+
+[node name="Leaf3" parent="." instance=ExtResource("8_pfp4w")]
+transform = Transform3D(-0.547724, 0, -0.836659, 0, 1, 0, 0.836659, 0, -0.547724, 14.1997, 3.99939, 49.5807)
+
+[node name="Leaf4" parent="." instance=ExtResource("8_pfp4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8054, 37.7676, 66.3429)
+
+[node name="Column" parent="." instance=ExtResource("9_of2f6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6377, 1.6488, 5.20284)
+
+[node name="Column2" parent="." instance=ExtResource("9_of2f6")]
+transform = Transform3D(0.957702, -0.287762, 0, 0.271348, 0.903076, -0.332902, 0.0957964, 0.318821, 0.942962, -23.6459, 7.99464, 5.13871)
