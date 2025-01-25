@@ -49,3 +49,7 @@ void fragment() {
         discard;
     }
 }
+
+void light() {
+	
+}
