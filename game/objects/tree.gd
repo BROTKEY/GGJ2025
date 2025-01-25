@@ -2,12 +2,12 @@
 extends EditorScript
 
 var wood: Mesh = load("res://assets/meshes/Plant_001.mesh")
-var leaf: Mesh = load("res://assets/meshes/Suzanne_001.mesh")
+var leaf: Mesh = load("res://assets/meshes/Leaf_001.mesh")
 var max_depth: int = 2
 var splits_min: int = 5
 var splits_max: int = 9
 var sub_scale_vector: Vector3 = Vector3(0.3, 0.5, 0.3)
-var leaf_scale_vector: Vector3 = Vector3(1, 1, 1)
+var leaf_scale_vector: Vector3 = Vector3(3, 3, 3)
 var rand_branch_y_offset_min: float = -1
 var rand_branch_y_offset_max: float = 5
 var branch_length: float = 6.9
@@ -21,6 +21,11 @@ func _run() -> void:
 	root = get_scene().get_tree().edited_scene_root
 	var scene = get_scene().find_children("tree*")
 	for child in scene:
+		for n in child.get_children():
+			if n.get_index() == 0:
+				continue
+			child.remove_child(n)
+			n.queue_free() 
 		#var childpack = child as PackedScene
 		#print(childpack)
 	#scene.add_child(root)
@@ -36,7 +41,10 @@ func recursiveAddSticks(limit: int, prevMesh: Node3D) -> void:
 	
 	var rand = randi_range(splits_min, splits_max)
 	for i in range(rand):
-		var rand_rotation = Vector3(randf_range(-60, 60), randf_range(0, 360), randf_range(-60, 60))
+		var x_change = randf_range(-60, 60)
+		var z_change = randf_range(-60, 60)
+		var y_change = 180 if z_change<0 else 0 + x_change
+		var rand_rotation = Vector3(x_change, y_change, z_change)
 		var new_stick = addStick(rand_rotation, sub_scale_vector, Vector3(0, branch_length, 0), true, false, true)
 		
 		prevMesh.get_child(0).add_child(new_stick)
@@ -65,7 +73,8 @@ func addStick(rotation: Vector3, scale_vector: Vector3, position_offset: Vector3
 		var leafInstance = CSGMesh3D.new()
 		leafInstance.mesh = leaf
 		leafInstance.scale = leaf_scale_vector
-		leafInstance.position = Vector3(0, branch_length, 0)  # Place leaf at the end of the branch (you can adjust this position)
+		leafInstance.position = Vector3(0, branch_length, 0)
+		leafInstance.material = load("res://addons/pixpal_tools/Imphenzia/PixPal/Materials/ImphenziaPixPal.tres")  # Place leaf at the end of the branch (you can adjust this position)
 		
 		# Add leaf as a child of the branch mesh
 		meshInstance.add_child(leafInstance)
