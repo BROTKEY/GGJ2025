@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Don't commit extracted PNGs
+/assets/models/*.png
+/assets/models/*.png.import

@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cy5upavlqi6hn"]
 
 [ext_resource type="Script" path="res://objects/player/player.gd" id="1_iasqv"]
-[ext_resource type="PackedScene" uid="uid://ym784c0h43t1" path="res://assets/models/duck_internet.glb" id="2_xmu7f"]
+[ext_resource type="PackedScene" uid="uid://b12cq1c3j10ak" path="res://assets/models/duck_internet.glb" id="2_xmu7f"]
 [ext_resource type="Shader" path="res://shaders/bubble.gdshader" id="3_rocf5"]
 [ext_resource type="Texture2D" uid="uid://veuoliraltao" path="res://assets/textures/colornoise.png" id="4_mybdu"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="5_j56p1"]
