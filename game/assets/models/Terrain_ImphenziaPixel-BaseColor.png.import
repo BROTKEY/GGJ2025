@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m0xo022jex31"
-path="res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.ctex"
+uid="uid://pwneqb5803l5"
+path="res://.godot/imported/Terrain_ImphenziaPixel-BaseColor.png-6a3e472e5b76ab6440e3c9e58c26c54d.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/Duck_ImphenziaPixel-BaseColor.png"
-dest_files=["res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.ctex"]
+source_file="res://assets/models/Terrain_ImphenziaPixel-BaseColor.png"
+dest_files=["res://.godot/imported/Terrain_ImphenziaPixel-BaseColor.png-6a3e472e5b76ab6440e3c9e58c26c54d.ctex"]
 
 [params]
 

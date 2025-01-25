@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=10 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_x761p"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_frg1a"]
+[ext_resource type="PackedScene" uid="uid://bbgthdq3tfmbt" path="res://assets/models/Terrain.glb" id="3_jtfy7"]
+[ext_resource type="PackedScene" uid="uid://du75cd2raxwyf" path="res://assets/models/Duck.001.glb" id="4_72fag"]
+[ext_resource type="PackedScene" uid="uid://do5n7t203jqph" path="res://assets/models/Duck.glb" id="5_2d7xk"]
+[ext_resource type="PackedScene" uid="uid://df3oibopksj6j" path="res://assets/models/Rock.glb" id="6_352h3"]
 
 [sub_resource type="Environment" id="Environment_gc5qs"]
 
@@ -37,3 +41,15 @@ target = NodePath("../Player")
 
 [node name="Camera" type="Camera3D" parent="View"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.931775, 1.95264)
+
+[node name="Terrain" parent="." instance=ExtResource("3_jtfy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30232, 0, 1.33595)
+
+[node name="Duck_001" parent="." instance=ExtResource("4_72fag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3837, 13.4547, 2.78509)
+
+[node name="Duck" parent="." instance=ExtResource("5_2d7xk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3837, 13.4547, 2.78509)
+
+[node name="Rock" parent="." instance=ExtResource("6_352h3")]
+transform = Transform3D(1.4049, 0.0089996, -0.0143984, -0.0165344, 0.996143, -0.990682, 0.00386274, 0.990779, 0.996176, 19.3773, 4.55147, 0.796788)

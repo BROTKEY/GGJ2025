@@ -2,26 +2,29 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bln4kaydk2cal"
-path="res://.godot/imported/ImphenziaPixPal_Emission.png-b2c11865db628b0ae74276eb8eb469b6.ctex"
+uid="uid://bj5eq20neu1ub"
+path="res://.godot/imported/Terrain_ImphenziaPixel-Emission.png-6c61c90cb67a9ea008f0675bb6274cb4.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "ffd0043ffbd43be0683af73f9c447489"
 }
 
 [deps]
 
-source_file="res://Imphenzia/PixPal/Textures/ImphenziaPixPal_Emission.png"
-dest_files=["res://.godot/imported/ImphenziaPixPal_Emission.png-b2c11865db628b0ae74276eb8eb469b6.ctex"]
+source_file="res://assets/models/Terrain_ImphenziaPixel-Emission.png"
+dest_files=["res://.godot/imported/Terrain_ImphenziaPixel-Emission.png-6c61c90cb67a9ea008f0675bb6274cb4.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +34,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bp1ojmtwfyhhg"
-path="res://.godot/imported/Imphenzia-PixPal-Showcase.fbx-054dec41eae2ea55eb2f371a31d27b06.scn"
+uid="uid://bbgthdq3tfmbt"
+path="res://.godot/imported/Terrain.glb-4ede13a2537d7ddcd00138256e710b74.scn"
 
 [deps]
 
-source_file="res://Imphenzia/PixPal/Meshes/Imphenzia-PixPal-Showcase.fbx"
-dest_files=["res://.godot/imported/Imphenzia-PixPal-Showcase.fbx-054dec41eae2ea55eb2f371a31d27b06.scn"]
+source_file="res://assets/models/Terrain.glb"
+dest_files=["res://.godot/imported/Terrain.glb-4ede13a2537d7ddcd00138256e710b74.scn"]
 
 [params]
 
@@ -27,11 +27,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1

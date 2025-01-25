@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m0xo022jex31"
-path="res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.ctex"
+uid="uid://4o4byppeo03p"
+path="res://.godot/imported/Rock_ImphenziaPixel-Emission.png-5e3e8586a9b6f4df96aa1b6c9cc137e7.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "c8dc4c0d0440d6a46a78624ef794cd0f"
+"md5": "ffd0043ffbd43be0683af73f9c447489"
 }
 
 [deps]
 
-source_file="res://assets/models/Duck_ImphenziaPixel-BaseColor.png"
-dest_files=["res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.ctex"]
+source_file="res://assets/models/Rock_ImphenziaPixel-Emission.png"
+dest_files=["res://.godot/imported/Rock_ImphenziaPixel-Emission.png-5e3e8586a9b6f4df96aa1b6c9cc137e7.ctex"]
 
 [params]
 
