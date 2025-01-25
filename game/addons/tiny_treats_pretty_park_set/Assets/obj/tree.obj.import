@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1n5mkqoe7y74"
+path="res://.godot/imported/tree.obj-433afeaa3d193bf67f5ba7c272b48d6c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree.obj-433afeaa3d193bf67f5ba7c272b48d6c.mesh"]
+
+source_file="res://addons/tiny_treats_pretty_park_set/Assets/obj/tree.obj"
+dest_files=["res://.godot/imported/tree.obj-433afeaa3d193bf67f5ba7c272b48d6c.mesh", "res://.godot/imported/tree.obj-433afeaa3d193bf67f5ba7c272b48d6c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

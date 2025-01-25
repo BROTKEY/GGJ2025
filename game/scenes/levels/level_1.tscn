@@ -1,0 +1,203 @@
+[gd_scene load_steps=14 format=3 uid="uid://diupi7686o45v"]
+
+[ext_resource type="Texture2D" uid="uid://csjs0djlklln8" path="res://addons/tiny_treats_pretty_park_set/Assets/Textures/tiny_treats_grass_texture.png" id="1_hmjv5"]
+[ext_resource type="ArrayMesh" uid="uid://b2whymdxyfet" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/tree_large.obj" id="2_ta8fs"]
+[ext_resource type="ArrayMesh" uid="uid://bgb8n4fykpml5" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/street_lantern.obj" id="3_0dwpu"]
+[ext_resource type="ArrayMesh" uid="uid://dpto5udnung03" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/fountain.obj" id="3_31tmm"]
+[ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="3_puca5"]
+[ext_resource type="ArrayMesh" uid="uid://ciprbxecn7xjo" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/fountain_water.obj" id="4_q4s3b"]
+[ext_resource type="ArrayMesh" uid="uid://b6qqqj2yr7pn4" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/hedge_straight_long.obj" id="5_rem4g"]
+[ext_resource type="ArrayMesh" uid="uid://cg73eouj8rxh5" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/bench.obj" id="7_f0qqd"]
+[ext_resource type="Script" path="res://scenes/levels/footpath.gd" id="8_ojlaw"]
+[ext_resource type="ArrayMesh" uid="uid://dvxhe67r2a5f8" path="res://addons/tiny_treats_pretty_park_set/Assets/obj/cobble_stones_large.obj" id="9_m2hvh"]
+
+[sub_resource type="Environment" id="Environment_jxo7o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e24wx"]
+albedo_texture = ExtResource("1_hmjv5")
+normal_enabled = true
+uv1_scale = Vector3(1.465, 1.465, 1.465)
+uv1_offset = Vector3(0.255, 0, 0)
+uv2_scale = Vector3(0.98, 0.98, 0.98)
+
+[sub_resource type="Curve3D" id="Curve3D_mf00p"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.953, 0.48, 8.448, 0, 0, 0, 0, 0, 0, 0.0705413, 0.48, 2.986, 0, 0, 0, 0, 0, 0, -1.223, 0.48, -2.473, 0, 0, 0, 0, 0, 0, 1.279, 0.48, -8.298, 0, 0, 0, 0, 0, 0, 4.568, 0.48, -10.989, 0, 0, 0, 0, 0, 0, 1.773, 0.48, -15.938),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="Level 1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("3_puca5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97726, 0.919242, 8.30488)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jxo7o")
+
+[node name="baselayer" type="CSGBox3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1593, 0, -15.4709)
+use_collision = true
+size = Vector3(15, 1, 50)
+material = SubResource("StandardMaterial3D_e24wx")
+
+[node name="walls" type="Node3D" parent="WorldEnvironment/baselayer"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WorldEnvironment/baselayer/walls"]
+transform = Transform3D(0.926535, 0, -0.376208, 0, 1, 0, 0.376208, 0, 0.926535, 3.24839, 1.16326, -7.986)
+use_collision = true
+size = Vector3(12.842, 3.70984, 5.06543)
+material = SubResource("StandardMaterial3D_e24wx")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="WorldEnvironment/baselayer/walls"]
+transform = Transform3D(0.914572, 0, 0.404423, 0, 1, 0, -0.404423, 0, 0.914572, -3.60416, 0.581631, -7.14884)
+use_collision = true
+size = Vector3(12.842, 3.70984, 5.06543)
+material = SubResource("StandardMaterial3D_e24wx")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="WorldEnvironment/baselayer/walls"]
+transform = Transform3D(0.998772, 0, 0.0495469, 0, 1, 0, -0.0495469, 0, 0.998772, 2.34155, -0.0516562, -5.80183)
+use_collision = true
+size = Vector3(19.9954, 3.70984, 5.06543)
+material = SubResource("StandardMaterial3D_e24wx")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="WorldEnvironment/baselayer/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0315871, 1.43593, -16.7065)
+use_collision = true
+size = Vector3(16.0538, 2.78836, 17.5697)
+
+[node name="objects" type="Node3D" parent="WorldEnvironment"]
+
+[node name="big tree" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 0.998358, 0.0572852, 0, -0.0572852, 0.998358, -2.75353, -0.0693264, -16.002)
+use_collision = true
+mesh = ExtResource("2_ta8fs")
+
+[node name="big tree3" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 0.993437, 0.114382, 0, -0.114382, 0.993437, 5.20931, 0.429181, -14.8366)
+use_collision = true
+mesh = ExtResource("2_ta8fs")
+
+[node name="big tree2" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 0.998358, 0.0572852, 0, -0.0572852, 0.998358, -4.68369, 2.4065, -21.5756)
+use_collision = true
+mesh = ExtResource("2_ta8fs")
+
+[node name="fountain" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75072, 0.432119, -1.98788)
+use_collision = true
+mesh = ExtResource("3_31tmm")
+
+[node name="water" type="MeshInstance3D" parent="WorldEnvironment/objects/fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103395, 0)
+mesh = ExtResource("4_q4s3b")
+
+[node name="longbush" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(0.390571, 0, 0.920573, 0, 1, 0, -0.920573, 0, 0.390571, -5.70033, 0, -5.51006)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush"]
+transform = Transform3D(0.848316, 0, -0.52949, 0, 1, 0, 0.52949, 0, 0.848316, 3.48091, 0, 0.980885)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush"]
+transform = Transform3D(0.833548, 0, -0.552446, 0, 1, 0, 0.552446, 0, 0.833548, 6.05845, 0, 2.8403)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush"]
+transform = Transform3D(0.827825, 0, -0.560986, 0, 1, 0, 0.560986, 0, 0.827825, 2.92569, 1.03628, 1.08221)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush"]
+transform = Transform3D(0.833548, 0, -0.552446, 0, 1, 0, 0.552446, 0, 0.833548, 6.05845, 1, 2.8403)
+mesh = ExtResource("5_rem4g")
+
+[node name="longbush2" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(0.937179, 0, -0.34885, 0, 1, 0, 0.34885, 0, 0.937179, 5.52573, 0, -6.40881)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush2"]
+transform = Transform3D(0.848316, 0, -0.52949, 0, 1, 0, 0.52949, 0, 0.848316, 3.48091, 0, 0.980885)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush2/CSGMesh3D2"]
+transform = Transform3D(0.999294, 0, -0.0375681, 0, 1, 0, 0.0375681, 0, 0.999294, -0.41735, 1.03628, 0.37994)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush2"]
+transform = Transform3D(0.833548, 0, -0.552446, 0, 1, 0, 0.552446, 0, 0.833548, 6.05845, 0, 2.8403)
+use_collision = true
+mesh = ExtResource("5_rem4g")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment/objects/longbush2/CSGMesh3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("5_rem4g")
+
+[node name="big tree4" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 0.998358, 0.0572852, 0, -0.0572852, 0.998358, 2.86558, 1.09552, -19.3742)
+use_collision = true
+mesh = ExtResource("2_ta8fs")
+
+[node name="big tree5" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 0.973834, 0.227263, 0, -0.227263, 0.973834, 10.4186, 2.16802, -22.0178)
+use_collision = true
+mesh = ExtResource("2_ta8fs")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264953, 0.45244, -17.5145)
+use_collision = true
+mesh = ExtResource("7_f0qqd")
+
+[node name="Lights" type="Node3D" parent="WorldEnvironment"]
+
+[node name="Lantern" type="CSGMesh3D" parent="WorldEnvironment/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00609, 0, 4.93389)
+use_collision = true
+mesh = ExtResource("3_0dwpu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment/Lights/Lantern"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62268, 0)
+light_color = Color(1, 1, 0.333333, 1)
+light_energy = 5.117
+light_volumetric_fog_energy = 1.544
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/Lights"]
+transform = Transform3D(0.450289, -0.607728, 0.654145, -0.519468, 0.417564, 0.745516, -0.726218, -0.675505, -0.12767, 23.5095, 16.6349, 0)
+light_energy = 2.321
+
+[node name="Lantern2" type="CSGMesh3D" parent="WorldEnvironment/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1324, 2.28868, -19.8423)
+use_collision = true
+mesh = ExtResource("3_0dwpu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment/Lights/Lantern2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62268, 0)
+light_color = Color(1, 1, 0.333333, 1)
+light_energy = 5.117
+light_volumetric_fog_energy = 1.544
+
+[node name="path" type="Node3D" parent="WorldEnvironment"]
+
+[node name="footpath" type="Path3D" parent="WorldEnvironment/path"]
+curve = SubResource("Curve3D_mf00p")
+script = ExtResource("8_ojlaw")
+
+[node name="pathtile" type="MeshInstance3D" parent="WorldEnvironment/path/footpath"]
+visible = false
+mesh = ExtResource("9_m2hvh")
+skeleton = NodePath("../../../..")
