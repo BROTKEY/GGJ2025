@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cokrybdh117b"
-path.s3tc="res://.godot/imported/duck_ImphenziaPixel-Emission.png-a1e8ccb11b18a6601497627e2b07abba.s3tc.ctex"
+uid="uid://4hrgkib5g7of"
+path.s3tc="res://.godot/imported/Bow_ImphenziaPixel-Attributes.png-320b2e154c2b44b71529035fc13d720a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ffd0043ffbd43be0683af73f9c447489"
+"md5": "043eb07423174a433ab474f8cd4eb28d"
 }
 
 [deps]
 
-source_file="res://assets/models/duck_ImphenziaPixel-Emission.png"
-dest_files=["res://.godot/imported/duck_ImphenziaPixel-Emission.png-a1e8ccb11b18a6601497627e2b07abba.s3tc.ctex"]
+source_file="res://assets/models/Bow_ImphenziaPixel-Attributes.png"
+dest_files=["res://.godot/imported/Bow_ImphenziaPixel-Attributes.png-320b2e154c2b44b71529035fc13d720a.s3tc.ctex"]
 
 [params]
 
