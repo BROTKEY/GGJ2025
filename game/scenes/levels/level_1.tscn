@@ -49,6 +49,11 @@ mesh = ExtResource("5_mdo7w")
 transform = Transform3D(4.69946, -0.602287, -0.150418, 0.498997, 3.27894, -0.237625, 1.19653, 0.998091, 0.68988, 7.71678, 0.0138073, -3.47842)
 mesh = ExtResource("5_mdo7w")
 
+[node name="Bubbles" type="CSGMesh3D" parent="WorldEnvironment/objects"]
+transform = Transform3D(-0.0259302, 0.128331, -0.235133, 0.104562, 0.213018, 0.115709, 0.249757, -0.0758579, -0.0728543, 8.78804, 0.912037, -6.57887)
+use_collision = true
+mesh = ExtResource("9_imask")
+
 [node name="Lights" type="Node3D" parent="WorldEnvironment"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/Lights"]
@@ -60,7 +65,7 @@ shadow_enabled = true
 [node name="ground" type="Node3D" parent="WorldEnvironment"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment/ground"]
-transform = Transform3D(0.35, 0, 0, 0, 0.4, 0, 0, 0, 1, 2.36096, 0, -15.7424)
+transform = Transform3D(0.35, 0, 0, 0, 0.4, 0, 0, 0, 1, 2.34487, 0.0128784, -15.7299)
 use_collision = true
 mesh = ExtResource("9_yxnxr")
 
@@ -69,7 +74,7 @@ mesh = ExtResource("9_yxnxr")
 [node name="tree" parent="WorldEnvironment/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.185, 0, 0, 0, 0.185, 0, 0, 0, 0.185, -5.04842, 1.00383, -6.55309)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment/not a tre/tree"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment/not a tre/tree"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@34537" type="Node3D" parent="WorldEnvironment/not a tre/tree"]
@@ -1473,7 +1478,7 @@ mesh = ExtResource("9_imask")
 [node name="tree2" parent="WorldEnvironment/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 5.91256, 1.20616, -8.79352)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment/not a tre/tree2"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment/not a tre/tree2"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@34683" type="Node3D" parent="WorldEnvironment/not a tre/tree2"]
@@ -2844,7 +2849,7 @@ mesh = ExtResource("9_imask")
 [node name="tree3" parent="WorldEnvironment/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.115333, 1.77093, -10.2481)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment/not a tre/tree3"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment/not a tre/tree3"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@34877" type="Node3D" parent="WorldEnvironment/not a tre/tree3"]
