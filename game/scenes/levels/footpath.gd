@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 
 @onready var path : Path3D  = $"."
@@ -7,7 +8,7 @@ extends Node3D
 @export var y_rand_factor : int  # Number of meshes to place
 @export var z_rand_factor : int  # Number of meshes to place
 
-func _ready():
+func _run():
 	# Access the path's curve
 	var curve = path.curve
 	var total_length = 0.0

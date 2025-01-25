@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d05nrivbbs140"]
+[gd_scene load_steps=2 format=3 uid="uid://d05nrivbbs140"]
 
-[ext_resource type="Script" path="res://objects/tree.gd" id="1_sw2or"]
-[ext_resource type="ArrayMesh" uid="uid://c8uy7p77j8fju" path="res://assets/meshes/Plant.res" id="2_014bi"]
+[ext_resource type="ArrayMesh" uid="uid://pofuaytk3fjl" path="res://assets/meshes/Plant_001.mesh" id="2_5888d"]
 
 [node name="tree" type="Node3D"]
-script = ExtResource("1_sw2or")
-mesh = ExtResource("2_014bi")
-max_depth = 2
-splits_min = 3
-splits_max = 5
-sub_scale_vector = Vector3(1, 1, 1)
+
+[node name="stamm" type="CSGMesh3D" parent="."]
+mesh = ExtResource("2_5888d")

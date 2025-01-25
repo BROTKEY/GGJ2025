@@ -1,22 +1,34 @@
-extends Node3D
+@tool
+extends EditorScript
 
-@export var mesh: Mesh
-@export var max_depth: int
-@export var splits_min: int
-@export var splits_max: int
-@export var sub_scale_vector: Vector3
-@export var rand_branch_y_offset_min: float = -0.2 
-@export var rand_branch_y_offset_max: float = 0.2 
-@export var branch_length: float = 6.8 
+var wood: Mesh = load("res://assets/meshes/Plant_001.mesh")
+var leaf: Mesh = load("res://assets/meshes/Suzanne_001.mesh")
+var max_depth: int = 2
+var splits_min: int = 5
+var splits_max: int = 9
+var sub_scale_vector: Vector3 = Vector3(0.3, 0.5, 0.3)
+var leaf_scale_vector: Vector3 = Vector3(1, 1, 1)
+var rand_branch_y_offset_min: float = -1
+var rand_branch_y_offset_max: float = 5
+var branch_length: float = 6.9
+
+var root: Node = null
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var root = Node3D.new()
-	add_child(root)
-	var stick = addStick(Vector3(0, 0, 0), Vector3(1, 1, 1), Vector3(0, 0, 0))  # Starting stick (root)
-	root.add_child(stick)  # Add the root stick to the root node
-	recursiveAddSticks(max_depth, stick)
-	
+func _run() -> void:
+	#var root = Node3D.new()
+	#var scene = get_editor_interface().get_edited_scene_root()
+	root = get_scene().get_tree().edited_scene_root
+	var scene = get_scene().find_children("tree*")
+	for child in scene:
+		#var childpack = child as PackedScene
+		#print(childpack)
+	#scene.add_child(root)
+		var stick = addStick(Vector3(0, 0, 0), Vector3(1, 1, 1), child.get_child(0).position, false, true, false)  # Starting stick (root)
+		child.add_child(stick)  # Add the root stick to the root node
+		recursiveAddSticks(max_depth, stick)
+		recursively_set_owner(child, get_scene().get_tree().edited_scene_root)
+	EditorInterface.save_all_scenes()
 
 func recursiveAddSticks(limit: int, prevMesh: Node3D) -> void:
 	if limit <= 0:
@@ -24,23 +36,44 @@ func recursiveAddSticks(limit: int, prevMesh: Node3D) -> void:
 	
 	var rand = randi_range(splits_min, splits_max)
 	for i in range(rand):
-		var rand_rotation = Vector3(randf_range(-90, 90), randf_range(0, 360), randf_range(-90, 90))
-		var new_stick = addStick(rand_rotation, sub_scale_vector, Vector3(0, branch_length, 0))
+		var rand_rotation = Vector3(randf_range(-60, 60), randf_range(0, 360), randf_range(-60, 60))
+		var new_stick = addStick(rand_rotation, sub_scale_vector, Vector3(0, branch_length, 0), true, false, true)
 		
-		prevMesh.get_child(0).add_child(new_stick)  
+		prevMesh.get_child(0).add_child(new_stick)
 		recursiveAddSticks(limit - 1, new_stick)
 
 	
-func addStick(rotation: Vector3, scale_vector: Vector3, position_offset: Vector3) -> Node3D:
+func addStick(rotation: Vector3, scale_vector: Vector3, position_offset: Vector3, spawn_leaf: bool, collision: bool, rand_alt:bool) -> Node3D:
 	var node = Node3D.new()
 	node.scale = scale_vector
 	node.rotation_degrees = rotation
 	node.auto_translate_mode = node.AUTO_TRANSLATE_MODE_INHERIT
-	node.position = Vector3(0,randf_range(rand_branch_y_offset_min, rand_branch_y_offset_max), 0)
+	
+	# Apply random Y offset if needed
+	if rand_alt:
+		node.position = Vector3(0, randf_range(rand_branch_y_offset_min, rand_branch_y_offset_max), 0)
+	
+	# Create the branch mesh
 	var meshInstance = CSGMesh3D.new()
 	meshInstance.position = position_offset
-	meshInstance.mesh = mesh
-	meshInstance.use_collision = true
+	meshInstance.mesh = wood
+	meshInstance.use_collision = collision
 	meshInstance.auto_translate_mode = node.AUTO_TRANSLATE_MODE_INHERIT
+	
+	# Create the leaf mesh and position it
+	if spawn_leaf:
+		var leafInstance = CSGMesh3D.new()
+		leafInstance.mesh = leaf
+		leafInstance.scale = leaf_scale_vector
+		leafInstance.position = Vector3(0, branch_length, 0)  # Place leaf at the end of the branch (you can adjust this position)
+		
+		# Add leaf as a child of the branch mesh
+		meshInstance.add_child(leafInstance)
+	
 	node.add_child(meshInstance)
 	return node
+
+func recursively_set_owner(node: Node, root):
+	for child in node.get_children():
+		child.owner = root
+		recursively_set_owner(child, root)
