@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=5 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_x761p"]
-[ext_resource type="Script" path="res://scripts/view.gd" id="2_frg1a"]
 
 [sub_resource type="Environment" id="Environment_gc5qs"]
 background_mode = 1
@@ -23,18 +22,8 @@ points = PackedVector3Array(-1.6325, -0.05, -1.6225, -1.6325, 0.05, -1.6225, 1.6
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gc5qs")
 
-[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("1_x761p")]
+[node name="Player" parent="." instance=ExtResource("1_x761p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.617342, 0)
-view = NodePath("../View")
-
-[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("2_frg1a")
-target = NodePath("../Player")
-
-[node name="Camera" type="Camera3D" parent="View"]
-transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, 0, 1, 0, 0, 0)
-current = true
 
 [node name="World" type="Node3D" parent="."]
 

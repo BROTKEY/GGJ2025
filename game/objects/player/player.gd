@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 signal coin_collected
 
-@export_subgroup("Components")
-@export var view: Node3D
+#@export_subgroup("Components")
+#@export var view: Node3D
 
 @export_subgroup("Properties")
 @export var movement_speed = 250
@@ -20,9 +20,12 @@ var jump_double = true
 
 var coins = 0
 
+
 #@onready var particles_trail = $ParticlesTrail
 #@onready var sound_footsteps = $SoundFootsteps
 @onready var model = $Model
+@onready var view = $View
+
 #@onready var animation = $Character/AnimationPlayer
 
 # Functions
