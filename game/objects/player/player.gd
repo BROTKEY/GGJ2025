@@ -45,39 +45,9 @@ func _physics_process(delta):
 
 	applied_velocity = velocity.lerp(movement_velocity, delta * 10)
 	applied_velocity.y = -gravity
-	
-	#var collision = move_and_collide(applied_velocity)
-	#if collision and :
-		#velocity = velocity.bounce(collision.get_normal())
 
 	velocity = applied_velocity
 	move_and_slide()
-	
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var bounce = velocity.bounce(collision.get_normal())
-		print(collision.get_collider().name, bounce, ' ', bounce.length())
-		if bounce.length() > 20:
-			velocity = bounce
-		#
-		###print("I collided with ", collision.get_collider().name)
-		##var angle = collision.get_angle()
-		##if angle > 0.1:
-			##velocity = velocity.bounce(collision.get_normal())
-	#print(applied_velocity)
-	print(is_on_floor())
-	
-	#var collision = move_and_collide(applied_velocity)
-	#if collision:
-		#velocity = velocity.slide(collision.get_normal())
-		#var bounce = velocity.bounce(collision.get_normal())
-		#print(collision.get_collider().name, bounce)
-		#if bounce.length() > 20:
-			#velocity = bounce
-		#else:
-			#self.on_f
-	#move_and_slide()
-	
 
 	# Rotation
 
