@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m0xo022jex31"
-path.s3tc="res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.s3tc.ctex"
+uid="uid://dhp5rmw7s2vcm"
+path="res://.godot/imported/ImphenziaPixPal_Attributes.png-72794d68bca839a489bba246040d50a1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "c8dc4c0d0440d6a46a78624ef794cd0f"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/Duck_ImphenziaPixel-BaseColor.png"
-dest_files=["res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.s3tc.ctex"]
+source_file="res://addons/pixpal_tools/Imphenzia/PixPal/Textures/ImphenziaPixPal_Attributes.png"
+dest_files=["res://.godot/imported/ImphenziaPixPal_Attributes.png-72794d68bca839a489bba246040d50a1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://do5n7t203jqph"
-path="res://.godot/imported/Duck.glb-571721c5fb6c43520e3ab398e523ee1f.scn"
+uid="uid://dvltene55he6l"
+path="res://.godot/imported/Stick.glb-b48d92afa8839185ee2e8bedd2045eac.scn"
 
 [deps]
 
-source_file="res://assets/models/Duck.glb"
-dest_files=["res://.godot/imported/Duck.glb-571721c5fb6c43520e3ab398e523ee1f.scn"]
+source_file="res://assets/models/Stick.glb"
+dest_files=["res://.godot/imported/Stick.glb-b48d92afa8839185ee2e8bedd2045eac.scn"]
 
 [params]
 

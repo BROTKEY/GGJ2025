@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m0xo022jex31"
-path.s3tc="res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.s3tc.ctex"
+uid="uid://0iu7bsxduw15"
+path="res://.godot/imported/Plant_ImphenziaPixel-Emission.png-b467feb10ccaf87edecea918a152e515.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "c8dc4c0d0440d6a46a78624ef794cd0f"
+"md5": "ffd0043ffbd43be0683af73f9c447489"
 }
 
 [deps]
 
-source_file="res://assets/models/Duck_ImphenziaPixel-BaseColor.png"
-dest_files=["res://.godot/imported/Duck_ImphenziaPixel-BaseColor.png-791312136293261754e827fc5658e24d.s3tc.ctex"]
+source_file="res://assets/models/Plant_ImphenziaPixel-Emission.png"
+dest_files=["res://.godot/imported/Plant_ImphenziaPixel-Emission.png-b467feb10ccaf87edecea918a152e515.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -35,4 +34,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
