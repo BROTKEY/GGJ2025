@@ -1,15 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6b6uchgd58t5"]
 
-[ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_x761p"]
+[ext_resource type="PackedScene" uid="uid://cpeqs2pnagtb4" path="res://objects/player/RigidPlayer.tscn" id="1_6ywhc"]
 
-[sub_resource type="Environment" id="Environment_gc5qs"]
-background_mode = 1
-background_color = Color(1.63645e-06, 0.409693, 0.601269, 1)
-ambient_light_color = Color(2.31028e-06, 0.803145, 0.999045, 1)
-tonemap_mode = 2
-ssao_enabled = true
-glow_enabled = true
-fog_enabled = true
+[sub_resource type="Environment" id="Environment_m7mx5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dlptl"]
 size = Vector3(10.44, 0.1, 38.085)
@@ -26,10 +19,9 @@ points = PackedVector3Array(-1.6225, -0.555, -1.425, -1.6225, -0.555, 1.425, -1.
 [node name="TestLevel" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_gc5qs")
+environment = SubResource("Environment_m7mx5")
 
-[node name="Player" parent="." instance=ExtResource("1_x761p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.396472, 0)
+[node name="RigidPlayer" parent="." instance=ExtResource("1_6ywhc")]
 
 [node name="World" type="Node3D" parent="."]
 
