@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy5upavlqi6hn"]
+
+[ext_resource type="Script" path="res://objects/player/player.gd" id="1_iasqv"]
+[ext_resource type="PackedScene" uid="uid://ym784c0h43t1" path="res://assets/models/duck_internet.glb" id="2_xmu7f"]
+[ext_resource type="Shader" path="res://shaders/bubble.gdshader" id="3_rocf5"]
+[ext_resource type="Texture2D" uid="uid://veuoliraltao" path="res://assets/textures/colornoise.png" id="4_mybdu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p5vgo"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ad3vx"]
+seamless = true
+noise = SubResource("FastNoiseLite_p5vgo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fd0e"]
+render_priority = 0
+shader = ExtResource("3_rocf5")
+shader_parameter/smoothness = 0.09
+shader_parameter/wobble_strength = 0.04
+shader_parameter/color_intensity = 0.89
+shader_parameter/opacity = 0.2
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ad3vx")
+shader_parameter/color_texture = ExtResource("4_mybdu")
+
+[sub_resource type="SphereMesh" id="SphereMesh_u8nv1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b7wts"]
+radius = 0.45
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_iasqv")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Duck" parent="Model" instance=ExtResource("2_xmu7f")]
+transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 0, 0, 0)
+
+[node name="Bubble" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+material_override = SubResource("ShaderMaterial_6fd0e")
+mesh = SubResource("SphereMesh_u8nv1")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("SphereShape3D_b7wts")

@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://veuoliraltao"
-path.s3tc="res://.godot/imported/colornoise.png-18527ea7c49c5fc4067f0c17166dd69f.s3tc.ctex"
+uid="uid://bln4kaydk2cal"
+path="res://.godot/imported/ImphenziaPixPal_Emission.png-b2c11865db628b0ae74276eb8eb469b6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/colornoise.png"
-dest_files=["res://.godot/imported/colornoise.png-18527ea7c49c5fc4067f0c17166dd69f.s3tc.ctex"]
+source_file="res://Imphenzia/PixPal/Textures/ImphenziaPixPal_Emission.png"
+dest_files=["res://.godot/imported/ImphenziaPixPal_Emission.png-b2c11865db628b0ae74276eb8eb469b6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

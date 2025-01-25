@@ -3,8 +3,8 @@ shader_type spatial;
 uniform sampler2D noise_texture;
 uniform sampler2D color_texture;
 uniform float smoothness: hint_range(0.0, 0.2, 0.01);
-uniform float wobble_strength: hint_range(0.0, 1.0, 0.05);
-uniform float color_intensity: hint_range(0.0, 1.0, 0.05);
+uniform float wobble_strength: hint_range(0.0, 1.0, 0.01);
+uniform float color_intensity: hint_range(0.0, 1.0, 0.01);
 uniform float opacity: hint_range(0.0, 1.0, 0.1);
 
 varying vec3 world_position;

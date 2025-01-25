@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://veuoliraltao"
-path.s3tc="res://.godot/imported/colornoise.png-18527ea7c49c5fc4067f0c17166dd69f.s3tc.ctex"
+uid="uid://b4i2jmggquyu6"
+path.s3tc="res://.godot/imported/duck_ImphenziaPixel-Attributes.png-3bd801682f52ede3bcb861f7237e3536.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "043eb07423174a433ab474f8cd4eb28d"
+}
 
 [deps]
 
-source_file="res://assets/textures/colornoise.png"
-dest_files=["res://.godot/imported/colornoise.png-18527ea7c49c5fc4067f0c17166dd69f.s3tc.ctex"]
+source_file="res://assets/models/duck_ImphenziaPixel-Attributes.png"
+dest_files=["res://.godot/imported/duck_ImphenziaPixel-Attributes.png-3bd801682f52ede3bcb861f7237e3536.s3tc.ctex"]
 
 [params]
 
