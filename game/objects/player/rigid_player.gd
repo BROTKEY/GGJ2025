@@ -4,7 +4,11 @@ extends RigidBody3D
 @export var movement_speed = 2500
 @export var jump_strength = 10
 @export var movement_cap = 5
+
 @export var bubble_time_s: int = 10
+@export var bubble_min: float = 1
+@export var bubble_min_plus_max: float = 1
+
 @export var void_level: int = -10
 
 @onready var model = $Model
@@ -29,6 +33,10 @@ func handle_bubble(delta:float) -> void:
 	current_bubble_time -= delta
 	if current_bubble_time < 0:
 		get_tree().reload_current_scene()
+		
+	var scale = current_bubble_time/ bubble_time_s * bubble_min_plus_max + bubble_min
+	$Model/Bubble/BubbleMesh.scale = Vector3(scale, scale,scale)
+	
 	
 
 func handle_controls(delta: float):
