@@ -102,9 +102,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var maybe_on_ground = false
 	var maybe_on_finish = false
 	for idx in range(collision_count):
-		if state.get_contact_collider_object(idx).name.begins_with(bubble_collider_name_starts_with):
-			if current_bubble_time < bubble_time_s:
-				current_bubble_time += state.step * bubble_regen_factor
+		#if state.get_contact_collider_object(idx).name.begins_with(bubble_collider_name_starts_with):
+			#if current_bubble_time < bubble_time_s:
+				#current_bubble_time += state.step * bubble_regen_factor
 		if state.get_contact_collider_object(idx).name.begins_with(finish_collider_name_starts_with):
 			maybe_on_finish = true
 			pass
@@ -115,3 +115,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	on_ground = maybe_on_ground
 	on_finish = maybe_on_finish
 	
+func in_bubble(delta: float):
+	if current_bubble_time < bubble_time_s:
+		current_bubble_time += delta * bubble_regen_factor

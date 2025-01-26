@@ -7,18 +7,16 @@
 [ext_resource type="ArrayMesh" uid="uid://blpmhcrqfcyo7" path="res://assets/meshes/Leaf_001.mesh" id="5_wvdw8"]
 [ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres" id="6_b6g6a"]
 [ext_resource type="PackedScene" uid="uid://d05nrivbbs140" path="res://objects/tree.tscn" id="6_s00wv"]
+[ext_resource type="PackedScene" uid="uid://c0jcd3705y2oe" path="res://objects/Qualle.tscn" id="7_dxar1"]
 [ext_resource type="ArrayMesh" uid="uid://pofuaytk3fjl" path="res://assets/meshes/Plant_001.mesh" id="8_hfg0b"]
-[ext_resource type="ArrayMesh" uid="uid://g2d6uym44gym" path="res://assets/meshes/Qualle_001.mesh" id="8_xc614"]
 [ext_resource type="ArrayMesh" uid="uid://cl0rcmr2khy7u" path="res://assets/meshes/Bow_001.mesh" id="9_60u5n"]
 [ext_resource type="ArrayMesh" uid="uid://47g8x2ka0oup" path="res://assets/meshes/Suzanne_001.mesh" id="9_imask"]
 [ext_resource type="ArrayMesh" uid="uid://bjou77kfn1vmn" path="res://assets/meshes/Terrain.res" id="9_yxnxr"]
 [ext_resource type="ArrayMesh" uid="uid://xm0vsb2c6pvl" path="res://assets/meshes/Column_001.mesh" id="12_5eval"]
 [ext_resource type="ArrayMesh" uid="uid://i2wc0liqikub" path="res://assets/meshes/Column2_001.mesh" id="14_5qdy5"]
 [ext_resource type="ArrayMesh" uid="uid://c0j4l1lg2id7g" path="res://assets/meshes/Kiste_001.mesh" id="15_agyyu"]
+[ext_resource type="PackedScene" uid="uid://dyyag41xwgpqd" path="res://objects/BubbleColumn.tscn" id="15_v7r28"]
 [ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="16_4w8mn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nurlj"]
-transparency = 1
 
 [node name="Level 1" type="Node3D"]
 
@@ -2897,7 +2895,7 @@ material = ExtResource("6_b6g6a")
 
 [node name="ground" type="Node3D" parent="WorldEnvironment2"]
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment2/ground"]
+[node name="ground" type="CSGMesh3D" parent="WorldEnvironment2/ground"]
 transform = Transform3D(0.35, 0, 0, 0, 0.4, 0, 0, 0, 1, 2.36856, 0.0332241, -15.7027)
 use_collision = true
 mesh = ExtResource("9_yxnxr")
@@ -2910,36 +2908,20 @@ transform = Transform3D(0.897374, 0.0847957, 0.433047, -0.441271, 0.172442, 0.88
 light_color = Color(0.83, 1, 0.934833, 1)
 light_energy = 0.35
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment2/Lights"]
-transform = Transform3D(0.576374, -0.0515964, -0.0857694, 0.041268, 0.579194, -0.071104, 0.0911895, 0.064005, 0.574293, 10.9301, 2.70397, -18.2532)
-mesh = ExtResource("8_xc614")
+[node name="Qualle" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, -3.79009, 5.84125, -19.6942)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment2/Lights/CSGMesh3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50868, 0.983197)
-light_color = Color(1, 0.51, 0.3, 1)
-light_energy = 2.211
-light_indirect_energy = 1.158
-light_size = 1.0
-shadow_enabled = true
-distance_fade_enabled = true
-distance_fade_begin = 0.0
-distance_fade_shadow = 1000.0
-distance_fade_length = 1000.0
+[node name="Kopf" parent="WorldEnvironment2/Lights/Qualle/Model" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324135, 2.81958, 0.424149)
 
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment2/Lights"]
-transform = Transform3D(0.337134, 0.0220621, -0.0545121, -0.0198139, 0.341295, 0.0155879, 0.0553689, -0.0121999, 0.337496, 1.64019, 4.99593, -24.6386)
-mesh = ExtResource("8_xc614")
+[node name="Qualle2" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 8.66897, 4.19742, -12.177)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment2/Lights/CSGMesh3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50868, 0.983197)
-light_color = Color(0.3, 1, 0.79, 1)
-light_energy = 2.211
-light_indirect_energy = 1.158
-shadow_enabled = true
-distance_fade_enabled = true
-distance_fade_begin = 0.0
-distance_fade_shadow = 1000.0
-distance_fade_length = 1000.0
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment2/Lights/Qualle2"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+
+[node name="Qualle3" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, -4.13731, 4.68244, -35.0202)
 
 [node name="objects" type="Node3D" parent="WorldEnvironment2"]
 
@@ -2950,7 +2932,7 @@ mesh = ExtResource("5_ohu7x")
 material = ExtResource("6_b6g6a")
 
 [node name="log" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(3.8431, 0.162823, 0.224502, -1.10933, 0.564078, 0.777756, 0, -0.809509, 0.587107, 0.662924, -2.70982, -14.4961)
+transform = Transform3D(3.8431, 0.162823, 0.224502, -1.10933, 0.564078, 0.777756, 0, -0.809509, 0.587107, 0.662924, -2.56891, -14.4961)
 use_collision = true
 mesh = ExtResource("5_ohu7x")
 material = ExtResource("6_b6g6a")
@@ -2962,7 +2944,7 @@ mesh = ExtResource("5_sc0gd")
 material = ExtResource("6_b6g6a")
 
 [node name="rock3" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.0419841, 1.53502, 6.39663, 0.486703, 1.08684, -6.83972, -0.872558, 0.680083, -3.50733, 9.06508, -0.649627, 2.99822)
+transform = Transform3D(0.0419841, 1.53502, 6.39663, 0.486703, 1.08684, -6.83972, -0.872558, 0.680083, -3.50733, 9.06508, -0.649627, 3.91888)
 use_collision = true
 mesh = ExtResource("5_sc0gd")
 material = ExtResource("6_b6g6a")
@@ -2974,27 +2956,15 @@ mesh = ExtResource("5_mdo7w")
 material = ExtResource("6_b6g6a")
 
 [node name="rock5" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(4.84901, -0.32344, 0.0332614, 0.498997, 3.27894, -0.237625, -0.0605506, 1.11997, 0.705304, 7.40213, 0.35261, -2.87264)
+transform = Transform3D(4.84901, -0.32344, 0.0332614, 0.498997, 3.27894, -0.237625, -0.0605506, 1.11997, 0.705304, 7.40213, 0.35261, -4.04098)
 use_collision = true
 mesh = ExtResource("5_mdo7w")
 material = ExtResource("6_b6g6a")
 
-[node name="Bubbles" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(-0.0259302, 0.128331, -0.235133, 0.104562, 0.213018, 0.115709, 0.249757, -0.0758579, -0.0728543, 8.78804, 0.912037, -6.57887)
-use_collision = true
+[node name="Monke" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
+transform = Transform3D(0.254764, 0.0653481, 0.066377, -0.0933211, 0.207717, 0.134365, -0.0192582, -0.142067, 0.226989, -2.58383, 0.192589, -14.1682)
 mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
-
-[node name="Bubbles" type="CSGMesh3D" parent="WorldEnvironment2/objects/Bubbles"]
-transform = Transform3D(0.216342, 0.0353921, 0.160653, -0.137537, -0.100957, 0.209554, 0.0909068, -0.23697, -0.0652824, -77.4196, 0.67264, 65.4917)
-use_collision = true
-mesh = ExtResource("9_imask")
-material = ExtResource("6_b6g6a")
-
-[node name="air" type="CSGSphere3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94769, 1.41671, -6.79172)
-radius = 0.142896
-material = SubResource("StandardMaterial3D_nurlj")
 
 [node name="wall" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(0.453366, 0.883727, -0.116125, 0.0107056, 0.124875, 0.992115, 0.89126, -0.451035, 0.0471534, -5.45576, 0.18486, -17.6118)
@@ -3024,11 +2994,13 @@ material = ExtResource("6_b6g6a")
 
 [node name="chest" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(0.95042, 0.106904, 0.292016, -0.179424, 0.955495, 0.234173, -0.253986, -0.274957, 0.927303, 1.78014, 0.279747, -34.5963)
+use_collision = true
 mesh = ExtResource("15_agyyu")
 material = ExtResource("6_b6g6a")
 
-[node name="loot" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
+[node name="finish" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(0.457062, 0.00785897, -0.00841156, 0, 0.581831, 0.406443, 0.0076429, -0.469983, 0.503029, 1.9405, 0.962212, -34.7665)
+use_collision = true
 mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
 
@@ -3036,6 +3008,18 @@ material = ExtResource("6_b6g6a")
 transform = Transform3D(0.98735, 0.0563576, -0.148204, 0.0296863, 0.852466, 0.521939, 0.155754, -0.519736, 0.840009, 1.14974, -1.12659, -26.5947)
 use_collision = true
 mesh = ExtResource("9_60u5n")
+
+[node name="Monke2" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
+transform = Transform3D(-0.212306, 0.195446, 0.183237, 0.0182745, -0.214722, 0.262108, 0.275129, 0.16508, 0.123986, -4.51739, 0.538152, -30.7373)
+use_collision = true
+mesh = ExtResource("9_imask")
+material = ExtResource("6_b6g6a")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
+transform = Transform3D(3.01568, -0.249468, -0.309582, 1.2508, 0.325766, 0.865471, -0.378142, -0.911945, 0.393853, 3.99369, -1.25796, -14.0299)
+use_collision = true
+mesh = ExtResource("8_hfg0b")
+material = ExtResource("6_b6g6a")
 
 [node name="walls" type="Node3D" parent="WorldEnvironment2"]
 
@@ -3046,6 +3030,17 @@ use_collision = true
 flip_faces = true
 size = Vector3(6.37915, 4.78723, 6.35547)
 
+[node name="airsources" type="Node3D" parent="WorldEnvironment2"]
+
+[node name="bubbles" parent="WorldEnvironment2/airsources" instance=ExtResource("15_v7r28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53979, 0.143298, -14.2506)
+
+[node name="bubbles2" parent="WorldEnvironment2/airsources" instance=ExtResource("15_v7r28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53455, 0.475243, -30.8349)
+
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
-transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.547801, 2.37712, 6.72806)
+transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.605124, 2.37712, 6.72143)
 movement_speed = 2600
+bubble_collider_name_starts_with = "ground"
+
+[editable path="WorldEnvironment2/Lights/Qualle"]
