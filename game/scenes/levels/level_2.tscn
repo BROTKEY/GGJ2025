@@ -3980,6 +3980,24 @@ light_energy = 0.35
 [node name="Qualle" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
 transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 3.66098, 2.81396, -4.71032)
 
+[node name="Qualle3" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, -9.81342, 1.54696, 3.59919)
+
+[node name="Qualle4" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
+transform = Transform3D(5.665, 0, 0, 0, 5.665, 0, 0, 0, 5.665, 35.4738, 1.54696, -130.822)
+
+[node name="Qualle5" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
+transform = Transform3D(3.55, 0, 0, 0, 3.55, 0, 0, 0, 3.55, -20.1269, -4.20716, -46.0851)
+
+[node name="Qualle8" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
+transform = Transform3D(0.98, 0, 0, 0, 0.98, 0, 0, 0, 0.98, -11.8495, -2.04917, -27.0626)
+
+[node name="Qualle7" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
+transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, -10.7045, 2.75069, 10.4044)
+
+[node name="Qualle6" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
+transform = Transform3D(3.27, 0, 0, 0, 3.27, 0, 0, 0, 3.27, 39.4728, -8.36679, -27.4482)
+
 [node name="Qualle2" parent="WorldEnvironment2/Lights" instance=ExtResource("7_lmwyd")]
 transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 5.81816, 2.14395, 0.519624)
 

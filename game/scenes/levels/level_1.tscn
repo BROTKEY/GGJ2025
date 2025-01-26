@@ -2922,6 +2922,21 @@ transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 8.66897, 4.19742, -1
 [node name="Qualle3" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
 transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, -4.13731, 4.68244, -35.0202)
 
+[node name="Qualle4" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, -11.4692, 0.216677, -21.8926)
+
+[node name="Qualle5" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, -11.4692, 2.44305, -12.2454)
+
+[node name="Qualle6" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, 14.6179, 3.47278, -18.4043)
+
+[node name="Qualle7" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3776, 3.47278, -49.0145)
+
+[node name="Qualle8" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
+transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.285402, 0.734686, -49.0145)
+
 [node name="objects" type="Node3D" parent="WorldEnvironment2"]
 
 [node name="rock" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
@@ -3038,7 +3053,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53455, 0.475243, -30.8349)
 
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
 transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.605124, 2.37712, 6.72143)
-god_mode = true
 movement_speed = 2600
 bubble_time_s = 20
 bubble_min = 0.7
