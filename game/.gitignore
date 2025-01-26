@@ -1,6 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+build/
 
 # Don't commit extracted PNGs
 /assets/models/*.png
