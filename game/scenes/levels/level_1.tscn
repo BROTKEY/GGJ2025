@@ -15,7 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://xm0vsb2c6pvl" path="res://assets/meshes/Column_001.mesh" id="12_5eval"]
 [ext_resource type="ArrayMesh" uid="uid://i2wc0liqikub" path="res://assets/meshes/Column2_001.mesh" id="14_5qdy5"]
 [ext_resource type="ArrayMesh" uid="uid://c0j4l1lg2id7g" path="res://assets/meshes/Kiste_001.mesh" id="15_agyyu"]
-[ext_resource type="PackedScene" path="res://objects/player/RigidPlayer.tscn" id="16_4w8mn"]
+[ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="16_4w8mn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nurlj"]
 transparency = 1
@@ -3038,4 +3038,4 @@ use_collision = true
 mesh = ExtResource("9_60u5n")
 
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547801, 2.37712, 7.68354)
+transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.547801, 2.37712, 6.72806)
