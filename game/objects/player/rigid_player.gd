@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @export_subgroup("Properties")
 @export var movement_speed = 2500
-@export var jump_strength = 250
+@export var jump_strength = 10
 @export var movement_cap = 5
 
 @onready var model = $Model
@@ -22,13 +22,12 @@ func _process(delta: float) -> void:
 func handle_controls(delta: float):
 	var input := Vector3.ZERO
 
-	input.x = -Input.get_axis("move_left", "move_right")
-	input.z = -Input.get_axis("move_forward", "move_back")
+	input.x = Input.get_axis("move_left", "move_right")
+	input.z = Input.get_axis("move_forward", "move_back")
 
 	var input_force = input * movement_speed * delta
 	var predicted_vel = self.linear_velocity + input_force.normalized() * 0.01
 	var vel = linear_velocity.length()
-	#print(vel)
 	var pred_vel = predicted_vel.length()
 	# Only apply input if speed is either below cap OR input would not accelerate further
 	if not (vel > movement_cap and pred_vel > vel):
@@ -46,8 +45,12 @@ func handle_controls(delta: float):
 
 func jump():
 	if air_time <= 0.2:
+		var cur_yf = self.linear_velocity.y
 		var force = jump_strength * Vector3.UP
-		self.apply_central_force(force)
+		var pred_force = self.linear_velocity + force
+		if pred_force.y > jump_strength:
+			force = max(0, (jump_strength - self.linear_velocity.y)) * Vector3.UP
+		self.apply_central_impulse(force)
 		air_time = 1
 		print("Jump")
 
