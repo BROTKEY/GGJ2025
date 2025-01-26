@@ -4,11 +4,14 @@ extends RigidBody3D
 @export var movement_speed = 2500
 @export var jump_strength = 10
 @export var movement_cap = 5
+@export var bubble_time_s: int = 10
+@export var void_level: int = -10
 
 @onready var model = $Model
 
 var on_ground = false
 var air_time = 0
+var current_bubble_time = bubble_time_s
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +20,16 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	self.handle_controls(delta)
+	self.handle_bubble(delta)
+	
+	if position.y < void_level:
+		get_tree().reload_current_scene()
 
+func handle_bubble(delta:float) -> void:
+	current_bubble_time -= delta
+	if current_bubble_time < 0:
+		get_tree().reload_current_scene()
+	
 
 func handle_controls(delta: float):
 	var input := Vector3.ZERO
