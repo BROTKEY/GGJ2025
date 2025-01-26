@@ -76,6 +76,22 @@ func handle_controls(delta: float):
 	if Input.is_action_just_pressed("jump"):
 		#if jump_single or jump_double:
 			jump()
+	self.handle_animations(delta)
+
+func handle_animations(delta):
+	var animation: AnimationPlayer = $Model/DuckAnimated/AnimationPlayer
+	var horizontal_velocity = Vector2(linear_velocity.x, linear_velocity.z)
+	var speed_factor = horizontal_velocity.length() / movement_speed / delta
+	print(speed_factor)
+	if speed_factor > 0.01:#self.on_ground:# and speed_factor > 0.05:
+		if animation.current_animation != "AnimDuck_005":
+			print('play')
+			animation.play("AnimDuck_005", 0.1)
+		animation.speed_scale = speed_factor * 100
+
+	elif animation.current_animation != "AnimDuck_001":
+		print('stop')
+		animation.play("AnimDuck_001", 0.1)
 
 func jump():
 	if air_time < coyote_time_s:
