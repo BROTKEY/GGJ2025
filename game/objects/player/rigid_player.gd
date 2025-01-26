@@ -32,6 +32,7 @@ var animation_player : AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Wiiboard.boardJump.connect(jump)
+	current_bubble_time = bubble_time_s
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
