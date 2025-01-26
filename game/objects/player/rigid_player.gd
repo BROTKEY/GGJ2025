@@ -86,7 +86,6 @@ func jump():
 			force = max(0, (jump_strength - self.linear_velocity.y)) * Vector3.UP
 		self.apply_central_impulse(force)
 		air_time = coyote_time_s
-		print("Jump")
 
 	# TODO: fancy bouncy squishy bubble
 	#model.scale = Vector3(0.75, 1.25, 0.75)
