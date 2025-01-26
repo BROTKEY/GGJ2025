@@ -30,7 +30,7 @@ environment = ExtResource("2_rp7ij")
 [node name="tree" parent="WorldEnvironment2/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.185, 0, 0, 0, 0.185, 0, 0, 0, 0.185, -5.04842, 1.00383, -6.55309)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@20868" type="Node3D" parent="WorldEnvironment2/not a tre/tree"]
@@ -546,7 +546,7 @@ material = ExtResource("12_7x2rv")
 [node name="tree2" parent="WorldEnvironment2/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 5.91256, 1.20616, -8.79352)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree2"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree2"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@20996" type="Node3D" parent="WorldEnvironment2/not a tre/tree2"]
@@ -1122,7 +1122,7 @@ material = ExtResource("12_7x2rv")
 [node name="tree3" parent="WorldEnvironment2/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(0.315, 0, 0, 0, 0.315, 0, 0, 0, 0.315, -0.115333, 1.77093, -10.2481)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree3"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree3"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@21139" type="Node3D" parent="WorldEnvironment2/not a tre/tree3"]
@@ -1938,7 +1938,7 @@ material = ExtResource("12_7x2rv")
 [node name="tree4" parent="WorldEnvironment2/not a tre" instance=ExtResource("6_s00wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05613, 3.52508, -37.3089)
 
-[node name="stamm" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree4"]
+[node name="stamm2" type="CSGMesh3D" parent="WorldEnvironment2/not a tre/tree4"]
 mesh = ExtResource("8_hfg0b")
 
 [node name="@Node3D@21342" type="Node3D" parent="WorldEnvironment2/not a tre/tree4"]
