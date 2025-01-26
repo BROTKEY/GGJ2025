@@ -115,6 +115,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	on_ground = maybe_on_ground
 	on_finish = maybe_on_finish
 	
-func in_bubble(delta: float):
-	if current_bubble_time < bubble_time_s:
+func in_bubble(delta: float, is_evil: bool):
+	if is_evil:
+		current_bubble_time -= delta * bubble_regen_factor
+	elif current_bubble_time < bubble_time_s:
 		current_bubble_time += delta * bubble_regen_factor

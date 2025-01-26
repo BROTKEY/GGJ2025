@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkri5ef084cju"]
+[gd_scene load_steps=8 format=3 uid="uid://iobfpfqbsbmr"]
 
-[ext_resource type="Shader" path="res://shaders/bubble.gdshader" id="1_scof4"]
-[ext_resource type="Script" path="res://objects/bubble.gd" id="1_ur62e"]
-[ext_resource type="Texture2D" uid="uid://veuoliraltao" path="res://assets/textures/colornoise.png" id="2_xvgmw"]
+[ext_resource type="Script" path="res://objects/evli_bubble.gd" id="1_m3qp1"]
+[ext_resource type="Shader" path="res://shaders/bubble.gdshader" id="2_o6v1r"]
+[ext_resource type="Texture2D" uid="uid://veuoliraltao" path="res://assets/textures/colornoise.png" id="3_tqrbs"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_1ntfi"]
 
@@ -12,22 +12,20 @@ noise = SubResource("FastNoiseLite_1ntfi")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4cicx"]
 render_priority = 0
-shader = ExtResource("1_scof4")
+shader = ExtResource("2_o6v1r")
 shader_parameter/smoothness = 0.1
 shader_parameter/wobble_strength = 0.5
 shader_parameter/color_intensity = 0.86
 shader_parameter/opacity = 0.6
 shader_parameter/speed = 0.777
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_nkw7x")
-shader_parameter/color_texture = ExtResource("2_xvgmw")
+shader_parameter/color_texture = ExtResource("3_tqrbs")
 
 [sub_resource type="SphereMesh" id="SphereMesh_0gh68"]
 
-[node name="Bubble" type="Node3D"]
-script = ExtResource("1_ur62e")
+[node name="EvilBubble" type="Node3D"]
+script = ExtResource("1_m3qp1")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 material_override = SubResource("ShaderMaterial_4cicx")
-instance_shader_parameters/color_override = Color(1, 1, 1, 1)
-instance_shader_parameters/color_override_strength = 0.0
 mesh = SubResource("SphereMesh_0gh68")

@@ -9,6 +9,8 @@ uniform float opacity: hint_range(0.0, 1.0, 0.1);
 uniform float speed: hint_range(0.0, 2.0) = 1.0;
 instance uniform float size = 1.0;
 instance uniform float noise_offset = 0.0;
+instance uniform vec3 color_override: source_color = vec3(1.0);
+instance uniform float color_override_strength: hint_range(0.0, 1.0) = 0.0;
 
 varying vec3 world_position;
 
@@ -33,6 +35,9 @@ void fragment() {
 	float fres = fresnel(NORMAL, VIEW_MATRIX);
 	ALBEDO = vec3(1.0, 1.0, 1.0)
 		- texture(color_texture, world_position.xz + vec2(world_position.y + TIME * speed * 0.1)).rgb * color_intensity;
+	if (color_override_strength > 0.0) {
+		ALBEDO = mix(ALBEDO, color_override, color_override_strength);
+	}
 	ALPHA = fres * opacity;
 }
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfi8xrh67k2jp"]
+
+[ext_resource type="Script" path="res://objects/inverse_bubble_column.gd" id="1_sgnwn"]
+[ext_resource type="Script" path="res://scripts/bubble_area.gd" id="2_0p7v0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yyvv4"]
+
+[node name="InverseBubbleColumn" type="Node3D"]
+script = ExtResource("1_sgnwn")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Bubbles" type="Node3D" parent="Model"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+script = ExtResource("2_0p7v0")
+is_evil = true
+
+[node name="Collider" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_yyvv4")
