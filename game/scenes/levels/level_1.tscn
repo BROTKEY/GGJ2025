@@ -3048,3 +3048,4 @@ size = Vector3(6.37915, 4.78723, 6.35547)
 
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
 transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.547801, 2.37712, 6.72806)
+movement_speed = 2600

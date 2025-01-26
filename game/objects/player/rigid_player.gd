@@ -1,9 +1,11 @@
 extends RigidBody3D
 
 @export_subgroup("Properties")
-@export var movement_speed = 2500
-@export var jump_strength = 10
-@export var movement_cap = 5
+@export var movement_speed = 2600
+@export var sv_airaccelerate_pct = 0.125
+@export var jump_strength = 12
+@export var movement_cap = 4.2
+@export var coyote_time_s = 0.2
 
 @onready var model = $Model
 
@@ -25,7 +27,7 @@ func handle_controls(delta: float):
 	input.x = Input.get_axis("move_left", "move_right")
 	input.z = Input.get_axis("move_forward", "move_back")
 
-	var input_force = input * movement_speed * delta
+	var input_force = input * movement_speed * delta * (1 if on_ground else sv_airaccelerate_pct)
 	var predicted_vel = self.linear_velocity + input_force.normalized() * 0.01
 	var vel = linear_velocity.length()
 	var pred_vel = predicted_vel.length()
@@ -44,14 +46,14 @@ func handle_controls(delta: float):
 			jump()
 
 func jump():
-	if air_time <= 0.2:
+	if air_time < coyote_time_s:
 		var cur_yf = self.linear_velocity.y
 		var force = jump_strength * Vector3.UP
 		var pred_force = self.linear_velocity + force
 		if pred_force.y > jump_strength:
 			force = max(0, (jump_strength - self.linear_velocity.y)) * Vector3.UP
 		self.apply_central_impulse(force)
-		air_time = 1
+		air_time = coyote_time_s
 		print("Jump")
 
 	# TODO: fancy bouncy squishy bubble

@@ -9,7 +9,8 @@ var connect_timeout_sec = 5
 var client = StreamPeerTCP.new()
 var status = null
 var weight = 75.0
-var vector_scale = 4.0
+var vector_scale_x = 2.5
+var vector_scale_y = 2.5
 var send_half = false
 var corners_buffer = []
 var buffer_limit = 100
@@ -29,9 +30,9 @@ func parse_data(data: String, delta: float):
 	var corners = []
 	for corner in corners_str:
 		corners.append(corner.to_float())
-	corners_buffer.append(corners)
+	corners_buffer.push_front(corners)
 	if len(corners_buffer) > buffer_limit:
-		corners_buffer.pop_front()
+		corners_buffer.pop_back()
 	
 	var corner_sum = 0
 	for corner in corners:
@@ -48,7 +49,7 @@ func parse_data(data: String, delta: float):
 
 func calibrate_weight():
 	print("Recalibrating Weight...")
-	var corners = average_corners(50)
+	var corners = average_corners(20)
 	var new_weight = corners.reduce(func(accum, number): return accum + number, 0)
 	if new_weight < 20:
 		print("Weight below 20kg. Not using new calibration data.")
@@ -62,9 +63,9 @@ func average_corners(last_x: int=0):
 	var avg_corners = []
 	for corner in range(4):
 		var value = 0
-		for corners_ids in range(max(0, len(corners_buffer)-last_x if last_x > 1 else 0), len(corners_buffer)):
+		for corners_ids in range(0, min(len(corners_buffer), last_x if last_x != 0 else len(corners_buffer))):
 			value = value + corners_buffer[corners_ids][corner]
-		value = value / len(corners_buffer)
+		value = value / min(len(corners_buffer), last_x)
 		avg_corners.append(value)
 	
 	return avg_corners
@@ -72,21 +73,23 @@ func average_corners(last_x: int=0):
 # Switches between sending x and y data since you can't send both in the same frame
 func _physics_process(delta: float) -> void:
 	send_half = !send_half
-	var corners = average_corners(5)
+	var corners = average_corners(2)
 	if send_half:
-		var x_velocity = (corners[0] + corners[1] - corners[2] - corners[3]) / weight * vector_scale
+		var x_velocity = (corners[0] + corners[1] - corners[2] - corners[3]) / weight * vector_scale_x
 		
 		var x_event = InputEventAction.new()
 		x_event.strength = min(abs(x_velocity),1)
 		x_event.pressed = true
 		x_event.action = "move_right" if x_velocity >= 0 else "move_left"
+		
 		Input.parse_input_event(x_event)
 	else:
-		var y_velocity = (corners[0] - corners[1] + corners[2] - corners[3]) / weight * vector_scale
+		var y_velocity = (corners[0] - corners[1] + corners[2] - corners[3]) / weight * vector_scale_y
 		
 		var y_event = InputEventAction.new()
 		y_event.strength = min(abs(y_velocity),1)
 		y_event.pressed = true
+		print("Y: " + str(min(abs(y_velocity),1)))
 		y_event.action = "move_forward" if y_velocity >= 0 else "move_back"
 		Input.parse_input_event(y_event)
 

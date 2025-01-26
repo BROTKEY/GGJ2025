@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://scripts/wiiboard.gd" id="4_sfcjy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mkwjj"]
-friction = 0.6
-bounce = 0.8
+friction = 0.1
+bounce = 0.6
 
 [sub_resource type="SphereMesh" id="SphereMesh_s1muj"]
 
@@ -15,6 +15,7 @@ bounce = 0.8
 radius = 0.45
 
 [node name="RigidPlayer" type="RigidBody3D"]
+mass = 2.2
 physics_material_override = SubResource("PhysicsMaterial_mkwjj")
 lock_rotation = true
 contact_monitor = true
