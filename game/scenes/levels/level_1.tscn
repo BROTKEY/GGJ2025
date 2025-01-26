@@ -3039,17 +3039,12 @@ mesh = ExtResource("9_60u5n")
 
 [node name="walls" type="Node3D" parent="WorldEnvironment2"]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="WorldEnvironment2/walls"]
-transform = Transform3D(23.7656, 0, 0, 0, 12.1104, 0, 0, 0, 0.555025, -7.3, 0.431, -15.199)
-visible = false
-use_collision = true
-size = Vector3(0.0279658, 2, 98.5036)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="WorldEnvironment2/walls"]
-transform = Transform3D(4.875, 0.00225697, 9.53765e-05, -0.00316225, 3.47999, 0.000691907, -0.000621256, -0.00323225, 0.745, 11.5156, 0.443, -14.189)
+transform = Transform3D(2.8, 0, 0, 0, 3.95411, 0, 0, 0, 8, 2.45, 5, -15.8)
 visible = false
 use_collision = true
-size = Vector3(0.001, 2, 71.6829)
+flip_faces = true
+size = Vector3(6.37915, 4.78723, 6.35547)
 
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
 transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.547801, 2.37712, 6.72806)
