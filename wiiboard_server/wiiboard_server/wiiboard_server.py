@@ -14,7 +14,7 @@ class BoardSocket(Wiiboard):
             "bottom_left":  0.0
         }
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.bind(("localhost", 42069))
+        self.sock.bind(("0.0.0.0", 42069))
         self.sock.listen(8)
         self.running = True
         super().__init__(address)
