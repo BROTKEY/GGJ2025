@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0jcd3705y2oe"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8k8kjg5n4ebt" path="res://assets/models/meshes/Quallenkopf.res" id="1_fwmfx"]
+[ext_resource type="Material" uid="uid://bdhtaciaxdwyc" path="res://assets/materials/quallenkopf_mat.tres" id="1_taof7"]
+[ext_resource type="Material" uid="uid://x2u7fbh5x3ej" path="res://assets/materials/quallenfuss_mat.tres" id="2_rq7k0"]
+[ext_resource type="ArrayMesh" uid="uid://t3ukwnu3ih2j" path="res://assets/models/meshes/Quallenfuss.res" id="3_r0073"]
+
+[node name="Qualle" type="Node3D"]
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Kopf" type="CSGMesh3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.003, 0)
+material_override = ExtResource("1_taof7")
+mesh = ExtResource("1_fwmfx")
+
+[node name="Fuesse" type="Node3D" parent="Model"]
+
+[node name="Fuss" type="CSGMesh3D" parent="Model/Fuesse"]
+transform = Transform3D(0.646603, 0, 0.762826, 0, 1, 0, -0.762826, 0, 0.646603, -1.40139, 0, -0.831957)
+material_override = ExtResource("2_rq7k0")
+mesh = ExtResource("3_r0073")
+
+[node name="Fuss2" type="CSGMesh3D" parent="Model/Fuesse"]
+transform = Transform3D(0.0178015, 0, 0.999841, 0, 1, 0, -0.999841, 0, 0.0178015, -1.41008, -0.234422, 0.403041)
+material_override = ExtResource("2_rq7k0")
+mesh = ExtResource("3_r0073")
+
+[node name="Fuss3" type="CSGMesh3D" parent="Model/Fuesse"]
+transform = Transform3D(-0.820232, 0, 0.572031, 0, 1, 0, -0.572031, 0, -0.820232, -0.533812, -0.234422, 1.31063)
+material_override = ExtResource("2_rq7k0")
+mesh = ExtResource("3_r0073")
+
+[node name="Fuss4" type="CSGMesh3D" parent="Model/Fuesse"]
+transform = Transform3D(-0.846314, 0, -0.532684, 0, 1, 0, 0.532684, 0, -0.846314, 0.61362, -0.234422, 1.27989)
+material_override = ExtResource("2_rq7k0")
+mesh = ExtResource("3_r0073")
+
+[node name="Fuss5" type="CSGMesh3D" parent="Model/Fuesse"]
+transform = Transform3D(-0.0979303, 0, -0.995193, 0, 1, 0, 0.995193, 0, -0.0979303, 1.20685, -0.234422, 0.0926645)
+material_override = ExtResource("2_rq7k0")
+mesh = ExtResource("3_r0073")
+
+[node name="Fuss6" type="CSGMesh3D" parent="Model/Fuesse"]
+transform = Transform3D(0.808709, 0, -0.588209, 0, 1, 0, 0.588209, 0, 0.808709, 0.12365, -0.234422, -1.20297)
+material_override = ExtResource("2_rq7k0")
+mesh = ExtResource("3_r0073")

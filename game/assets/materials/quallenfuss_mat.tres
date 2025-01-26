@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://x2u7fbh5x3ej"]
+
+[ext_resource type="Shader" path="res://shaders/quallenfuss.gdshader" id="1_guhgg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b0yaq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lr4bo"]
+noise = SubResource("FastNoiseLite_b0yaq")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_guhgg")
+shader_parameter/u_smoothness = 0.1
+shader_parameter/u_wobble_strength = 0.3
+shader_parameter/u_opacity = 0.5
+shader_parameter/u_wobble_speed = 1.5
+shader_parameter/u_noisiness = 1.0
+shader_parameter/u_color = Color(5.77569e-07, 0.438286, 0.678083, 1)
+shader_parameter/u_glow = 1.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_lr4bo")
