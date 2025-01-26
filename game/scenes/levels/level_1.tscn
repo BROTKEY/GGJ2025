@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c8uy7p77j8fju" path="res://assets/meshes/Plant.res" id="5_ohu7x"]
 [ext_resource type="ArrayMesh" uid="uid://cy8plnvlf83rn" path="res://assets/meshes/stone.res" id="5_sc0gd"]
 [ext_resource type="ArrayMesh" uid="uid://blpmhcrqfcyo7" path="res://assets/meshes/Leaf_001.mesh" id="5_wvdw8"]
-[ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/ImphenziaPixPal.tres" id="6_b6g6a"]
+[ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres" id="6_b6g6a"]
 [ext_resource type="PackedScene" uid="uid://d05nrivbbs140" path="res://objects/tree.tscn" id="6_s00wv"]
 [ext_resource type="ArrayMesh" uid="uid://pofuaytk3fjl" path="res://assets/meshes/Plant_001.mesh" id="8_hfg0b"]
 [ext_resource type="ArrayMesh" uid="uid://g2d6uym44gym" path="res://assets/meshes/Qualle_001.mesh" id="8_xc614"]
