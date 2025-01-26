@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6b6uchgd58t5"]
 
-[ext_resource type="PackedScene" uid="uid://cpeqs2pnagtb4" path="res://objects/player/RigidPlayer.tscn" id="1_6ywhc"]
+[ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="1_6ywhc"]
 [ext_resource type="PackedScene" uid="uid://dshmqmrk7ctg6" path="res://scenes/levels/music.tscn" id="2_xuiwb"]
 
 [sub_resource type="Environment" id="Environment_m7mx5"]
