@@ -4043,17 +4043,17 @@ mesh = ExtResource("9_ykb5j")
 material = ExtResource("5_jawuc")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(-0.189889, 0, -0.00649503, 0, 0.19, 0, 0.00649503, 0, -0.189889, 2.54987, 2.09233, 13.4762)
+transform = Transform3D(-0.240509, 0, -0.00655426, 0, 0.240777, 0, 0.00822648, 0, -0.19162, 2.54752, 2.38097, 13.4747)
 use_collision = true
 mesh = ExtResource("15_6b6nc")
 
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(-0.198486, 0, 0.0245609, 0, 0.2, 0, -0.0245609, 0, -0.198486, 1.73237, 0.520287, 13.5064)
+transform = Transform3D(-0.251029, 0, 0.0237564, 0, 0.253449, 0, -0.0310626, 0, -0.191984, 1.51245, 0.378792, 13.5064)
 use_collision = true
 mesh = ExtResource("13_c2b1y")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(-0.198486, 0, 0.0245609, 0, 0.2, 0, -0.0245609, 0, -0.198486, 3.38876, 0.528713, 13.4485)
+transform = Transform3D(-0.251029, 0, 0.0237564, 0, 0.253449, 0, -0.0310626, 0, -0.191984, 3.61065, 0.389469, 13.4485)
 use_collision = true
 mesh = ExtResource("13_c2b1y")
 
@@ -4100,14 +4100,14 @@ mesh = ExtResource("15_pq45m")
 material = ExtResource("5_jawuc")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(1.81812, 0, 0, 0, 1, 0, 0, 0, 1, 0.161555, 0, 13.7624)
+transform = Transform3D(1.81812, 0, 0, 0, 1, 0, 0, 0, 1, -0.00916176, 0, 13.7624)
 visible = false
 use_collision = true
 radius = 0.968238
 height = 7.46614
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(1.81812, 0, 0, 0, 1, 0, 0, 0, 1, 4.90663, 0, 13.7624)
+transform = Transform3D(1.81812, 0, 0, 0, 1, 0, 0, 0, 1, 5.10038, 0, 13.7624)
 visible = false
 use_collision = true
 radius = 0.968238

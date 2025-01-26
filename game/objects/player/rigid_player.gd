@@ -1,5 +1,8 @@
 extends RigidBody3D
 
+@export_subgroup("Cheats")
+@export var god_mode = false
+
 @export_subgroup("Properties")
 @export var movement_speed = 2600
 @export var sv_airaccelerate_pct = 0.125
@@ -44,7 +47,7 @@ func _process(delta: float) -> void:
 	if position.y < void_level:
 		kill_player = true
 
-	if kill_player:
+	if kill_player && !god_mode:
 		tree.reload_current_scene()
 		
 	if on_finish:
@@ -57,7 +60,7 @@ func handle_bubble(delta:float) -> void:
 	$Collider.scale = Vector3(scale,scale,scale)
 	
 	if current_bubble_time < 0:
-		get_tree().reload_current_scene()
+		kill_player = true
 
 func handle_controls(delta: float):
 	var input := Vector3.ZERO
@@ -82,6 +85,14 @@ func handle_controls(delta: float):
 	if Input.is_action_just_pressed("jump"):
 		#if jump_single or jump_double:
 			jump()
+	
+	if Input.is_action_just_pressed("godmode"):
+		god_mode = !god_mode
+		print("Godmode is now " + str(god_mode))
+	
+	if Input.is_action_just_pressed("next_level"):
+		on_finish = true
+	
 	self.handle_animations(delta)
 
 func handle_animations(delta):
