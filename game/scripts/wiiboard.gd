@@ -87,7 +87,7 @@ func _physics_process(delta: float) -> void:
 		var y_event = InputEventAction.new()
 		y_event.strength = min(abs(y_velocity),1)
 		y_event.pressed = true
-		y_event.action = "move_forward" if y_velocity >= 0 else "move_backwards"
+		y_event.action = "move_forward" if y_velocity >= 0 else "move_back"
 		Input.parse_input_event(y_event)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

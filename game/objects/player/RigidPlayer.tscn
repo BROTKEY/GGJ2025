@@ -17,6 +17,8 @@ radius = 0.45
 [node name="RigidPlayer" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_mkwjj")
 lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_4ba6p")
 movement_speed = 10000
 
