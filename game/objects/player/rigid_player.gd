@@ -14,6 +14,7 @@ extends RigidBody3D
 @export var bubble_collider_name_starts_with: String = "rock"
 
 @export var finish_collider_name_starts_with: String = "finish"
+@export var death_collider_name_starts_with: String = "death"
 
 @export var void_level: int = -10
 
@@ -23,6 +24,7 @@ var on_ground = false
 var on_finish = false
 var air_time = 0
 var current_bubble_time = bubble_time_s
+var kill_player = false
 
 var color_rect : ColorRect
 var animation_player : AnimationPlayer
@@ -30,6 +32,7 @@ var animation_player : AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Wiiboard.boardJump.connect(jump)
+	current_bubble_time = bubble_time_s
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,6 +42,9 @@ func _process(delta: float) -> void:
 	var tree = get_tree()
 	
 	if position.y < void_level:
+		kill_player = true
+
+	if kill_player:
 		tree.reload_current_scene()
 		
 	if on_finish:
@@ -123,6 +129,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		if state.get_contact_collider_object(idx).name.begins_with(finish_collider_name_starts_with):
 			maybe_on_finish = true
 			pass
+		if state.get_contact_collider_object(idx).name.begins_with(death_collider_name_starts_with):
+			kill_player = true
 		var col_normal = state.get_contact_local_normal(idx)
 		if col_normal.y > 0.5:
 			maybe_on_ground = true
