@@ -2992,13 +2992,13 @@ mesh = ExtResource("12_5eval")
 material = ExtResource("6_b6g6a")
 
 [node name="chest" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.88039, -0.325053, 0.345332, 0.36181, 0.931119, -0.0459563, -0.306607, 0.165404, 0.937355, 1.78014, -0.0743402, -34.5963)
+transform = Transform3D(1.10156, -0.294553, 0.461774, 0.452704, 0.843751, -0.0614522, -0.383633, 0.149884, 1.25342, 1.78014, -0.0743402, -34.5963)
 use_collision = true
 mesh = ExtResource("15_agyyu")
 material = ExtResource("6_b6g6a")
 
 [node name="finish" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.457062, 0.00785897, -0.00841156, 0, 0.581831, 0.406443, 0.0076429, -0.469983, 0.503029, 1.9405, 0.180114, -34.7665)
+transform = Transform3D(0.667907, 0.0114841, -0.0122903, 0, 0.850212, 0.593861, 0.0111686, -0.686772, 0.734985, 1.40043, 0.180114, -34.5083)
 use_collision = true
 mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
@@ -3038,6 +3038,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53455, 0.475243, -30.8349)
 
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
 transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.605124, 2.37712, 6.72143)
+god_mode = true
 movement_speed = 2600
 bubble_time_s = 20
 bubble_min = 0.7
