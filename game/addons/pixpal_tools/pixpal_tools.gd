@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-var import_plugin := preload("res://addons/pixpal_tools/material_importer.gd").new()
+var import_plugin := preload("material_importer.gd").new()
 
 func _enter_tree() -> void:
 	add_scene_post_import_plugin(import_plugin)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://m4we37u3ylbi"]
+[gd_scene load_steps=6 format=3 uid="uid://m4we37u3ylbi"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_jwxda"]
 [ext_resource type="ArrayMesh" uid="uid://b0r0tomectdri" path="res://assets/models/meshes/Plant.res" id="2_4k4le"]
-[ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres" id="3_ue48c"]
 [ext_resource type="ArrayMesh" uid="uid://d1fldrsj0xq6a" path="res://assets/models/meshes/Stick.res" id="4_2f6c8"]
 [ext_resource type="ArrayMesh" uid="uid://cx5nyfyp6t57a" path="res://assets/models/meshes/Terrain.res" id="5_m0qpf"]
 [ext_resource type="ArrayMesh" uid="uid://d2if8vc2uodyb" path="res://assets/models/meshes/Rock.res" id="6_bxp2n"]
@@ -24,7 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.63167, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.68202)
 use_collision = true
 mesh = ExtResource("2_4k4le")
-material = ExtResource("3_ue48c")
 
 [node name="Plant02" type="CSGMesh3D" parent="Plants"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.09453)

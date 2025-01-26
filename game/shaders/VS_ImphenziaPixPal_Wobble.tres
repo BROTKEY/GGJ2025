@@ -1,8 +1,4 @@
-[gd_resource type="VisualShader" load_steps=33 format=3 uid="uid://b0uox35f3xrui"]
-
-[ext_resource type="Texture2D" uid="uid://bln4kaydk2cal" path="res://addons/pixpal_tools/Imphenzia/PixPal/Textures/ImphenziaPixPal_Emission.png" id="1_my7gg"]
-[ext_resource type="Texture2D" uid="uid://c78hml4g8ipgy" path="res://addons/pixpal_tools/Imphenzia/PixPal/Textures/ImphenziaPixPal_BaseColor.png" id="2_e6psg"]
-[ext_resource type="Texture2D" uid="uid://dhp5rmw7s2vcm" path="res://addons/pixpal_tools/Imphenzia/PixPal/Textures/ImphenziaPixPal_Attributes.png" id="3_g0gx2"]
+[gd_resource type="VisualShader" load_steps=30 format=3 uid="uid://b0uox35f3xrui"]
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_frlxv"]
 default_input_values = [0, Vector2(0, 0)]
@@ -15,10 +11,8 @@ op_type = 0
 function = 31
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_l3ee6"]
-texture = ExtResource("1_my7gg")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_khv4d"]
-texture = ExtResource("2_e6psg")
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_op67b"]
 constant = 0.141
@@ -33,7 +27,6 @@ input_name = "time"
 operator = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_t22by"]
-texture = ExtResource("3_g0gx2")
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_b4oq5"]
 default_input_values = [0, Quaternion(0, 0, 0, 0)]
@@ -240,7 +233,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-438.267, -19.2417)
 nodes/vertex/0/position = Vector2(1160, 200)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_512o2")
 nodes/vertex/2/position = Vector2(-1640, 200)

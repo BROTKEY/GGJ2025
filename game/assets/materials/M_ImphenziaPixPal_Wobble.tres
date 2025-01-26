@@ -5,4 +5,4 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_2dmff")
-shader_parameter/wobble_strength = 1.5
+shader_parameter/wobble_strength = 1.675

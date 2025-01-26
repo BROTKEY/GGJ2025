@@ -10,7 +10,6 @@ noise = SubResource("FastNoiseLite_b0yaq")
 [resource]
 render_priority = 0
 shader = ExtResource("1_guhgg")
-shader_parameter/u_smoothness = 0.1
 shader_parameter/u_wobble_strength = 0.3
 shader_parameter/u_opacity = 0.5
 shader_parameter/u_wobble_speed = 1.5

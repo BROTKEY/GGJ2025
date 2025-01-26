@@ -74,7 +74,8 @@ func addStick(rotation: Vector3, scale_vector: Vector3, position_offset: Vector3
 		leafInstance.mesh = leaf
 		leafInstance.scale = leaf_scale_vector
 		leafInstance.position = Vector3(0, branch_length, 0)
-		leafInstance.material = load("res://addons/pixpal_tools/Imphenzia/PixPal/Materials/ImphenziaPixPal.tres")  # Place leaf at the end of the branch (you can adjust this position)
+		#leafInstance.material = load("res://assets/materials/M_ImphenziaPixPal_Wobble.tres")  # Place leaf at the end of the branch (you can adjust this position)
+		leafInstance.material = load("res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres")  # Place leaf at the end of the branch (you can adjust this position)
 		
 		# Add leaf as a child of the branch mesh
 		meshInstance.add_child(leafInstance)
