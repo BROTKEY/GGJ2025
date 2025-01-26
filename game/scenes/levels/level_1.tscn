@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="16_4w8mn"]
 
 [node name="Level 1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122771, -0.0128517, 0.00444412)
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_rp7ij")
@@ -2896,7 +2897,7 @@ material = ExtResource("6_b6g6a")
 [node name="ground" type="Node3D" parent="WorldEnvironment2"]
 
 [node name="ground" type="CSGMesh3D" parent="WorldEnvironment2/ground"]
-transform = Transform3D(0.35, 0, 0, 0, 0.4, 0, 0, 0, 1, 2.36856, 0.0332241, -15.7027)
+transform = Transform3D(0.35, 0, 0, 0, 0.137677, 0, 0, 0, 1.30671, 2.36856, 0.0332241, -10.6287)
 use_collision = true
 mesh = ExtResource("9_yxnxr")
 material = ExtResource("6_b6g6a")
@@ -2916,9 +2917,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324135, 2.81958, 0.424149)
 
 [node name="Qualle2" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
 transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 8.66897, 4.19742, -12.177)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment2/Lights/Qualle2"]
-transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 
 [node name="Qualle3" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
 transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, -4.13731, 4.68244, -35.0202)
@@ -3010,8 +3008,7 @@ use_collision = true
 mesh = ExtResource("9_60u5n")
 
 [node name="Monke2" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(-0.212306, 0.195446, 0.183237, 0.0182745, -0.214722, 0.262108, 0.275129, 0.16508, 0.123986, -4.51739, 0.538152, -30.7373)
-use_collision = true
+transform = Transform3D(-0.212306, 0.195446, 0.183237, 0.0182745, -0.214722, 0.262108, 0.275129, 0.16508, 0.123986, -4.51739, 0.538152, -30.8342)
 mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
 
@@ -3041,6 +3038,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53455, 0.475243, -30.8349)
 [node name="RigidPlayer" parent="." instance=ExtResource("16_4w8mn")]
 transform = Transform3D(-0.999558, 0, 0.0297361, 0, 1, 0, -0.0297361, 0, -0.999558, -0.605124, 2.37712, 6.72143)
 movement_speed = 2600
+bubble_time_s = 20
+bubble_min = 0.7
+bubble_min_plus_max = 1.3
 bubble_collider_name_starts_with = "ground"
 
 [editable path="WorldEnvironment2/Lights/Qualle"]
