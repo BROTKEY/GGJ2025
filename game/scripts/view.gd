@@ -19,7 +19,7 @@ var zoom = 4
 func _ready():
 	
 	#camera_rotation = rotation_degrees # Initial rotation
-	rotation_degrees = Vector3(-40, 0, 0)
+	rotation_degrees = Vector3(-20, 0, 0)
 	pass
 
 func _physics_process(delta):

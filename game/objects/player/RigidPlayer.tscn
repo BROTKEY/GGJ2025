@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpeqs2pnagtb4"]
+[gd_scene load_steps=8 format=3 uid="uid://c7s62r8gd4cn8"]
 
 [ext_resource type="Script" path="res://objects/player/rigid_player.gd" id="1_4ba6p"]
 [ext_resource type="PackedScene" uid="uid://dm6pofr32mt0n" path="res://assets/models/duck_internet.glb" id="1_4kxk3"]
-[ext_resource type="Material" uid="uid://7oma41dwvihk" path="res://objects/player/bubble_material.tres" id="2_vadav"]
+[ext_resource type="Material" uid="uid://c3jo5a1i5xje3" path="res://objects/player/bubble_material.tres" id="2_vadav"]
 [ext_resource type="Script" path="res://scripts/wiiboard.gd" id="4_sfcjy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mkwjj"]

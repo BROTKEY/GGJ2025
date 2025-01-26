@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=24 format=3 uid="uid://dxoncufpd7fij"]
+[gd_resource type="VisualShader" load_steps=24 format=3 uid="uid://d2sac0o84lqtd"]
 
 [ext_resource type="Texture2D" uid="uid://bln4kaydk2cal" path="res://addons/pixpal_tools/Imphenzia/PixPal/Textures/ImphenziaPixPal_Emission.png" id="1_dg5xh"]
 [ext_resource type="Texture2D" uid="uid://c78hml4g8ipgy" path="res://addons/pixpal_tools/Imphenzia/PixPal/Textures/ImphenziaPixPal_BaseColor.png" id="2_fsdtc"]
@@ -43,22 +43,22 @@ default_value_enabled = true
 default_value = 20.0
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_atka3"]
-size = Vector2(1124, 421)
+size = Vector2(1296, 450)
 title = "Animated Colors"
 attached_nodes = PackedInt32Array(9, 3, 10, 4, 8, 11)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_lf4tu"]
-size = Vector2(1184, 390)
+size = Vector2(1356, 390)
 title = "Attributes"
 attached_nodes = PackedInt32Array(6, 12, 7, 22)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_6xcqm"]
-size = Vector2(752, 390)
+size = Vector2(896, 230)
 title = "Colors"
 attached_nodes = PackedInt32Array(14, 21)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_1uhbc"]
-size = Vector2(864, 855)
+size = Vector2(1036, 690)
 title = "Emission"
 attached_nodes = PackedInt32Array(13, 15, 16, 23)
 
@@ -185,7 +185,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-243.439, -315.891)
 nodes/fragment/0/position = Vector2(2020, -780)
 nodes/fragment/3/node = SubResource("VisualShaderNodeInput_vpdvu")
 nodes/fragment/3/position = Vector2(-80, 120)

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://7oma41dwvihk"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://c3jo5a1i5xje3"]
 
 [ext_resource type="Shader" path="res://shaders/bubble.gdshader" id="1_qm5yb"]
 [ext_resource type="Texture2D" uid="uid://veuoliraltao" path="res://assets/textures/colornoise.png" id="2_g23em"]

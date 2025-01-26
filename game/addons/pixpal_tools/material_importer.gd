@@ -41,6 +41,6 @@ func iterate(node: Node) -> void:
 # Returns the PixPal ShaderMaterial. Caches for faster retrieval.
 func get_pixpal_material() -> ShaderMaterial:
 	if not pixpal_material:
-		pixpal_material = load("res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres")
+		pixpal_material = load("res://addons/pixpal_tools/Imphenzia/PixPal/Materials/ImphenziaPixPal.tres")
 
 	return pixpal_material

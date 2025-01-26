@@ -1,15 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=17 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://cy5upavlqi6hn" path="res://objects/player/player.tscn" id="1_t6a6n"]
-[ext_resource type="Environment" uid="uid://dk0cnvoagmfpp" path="res://scenes/levels/markus_level_env.tres" id="1_v32u8"]
 [ext_resource type="Script" path="res://scripts/view.gd" id="2_7exmy"]
 [ext_resource type="PackedScene" uid="uid://j74vsr7iyg0a" path="res://assets/models/Terrain.glb" id="3_on0cy"]
-[ext_resource type="PackedScene" uid="uid://ben12hprcoy31" path="res://assets/models/Duck.glb" id="5_rpqci"]
+[ext_resource type="PackedScene" uid="uid://ben12hprcoy31" path="res://assets/models/duck.glb" id="5_rpqci"]
 [ext_resource type="PackedScene" uid="uid://cwot5njavglae" path="res://assets/models/Rock.glb" id="6_yw1sc"]
 [ext_resource type="PackedScene" uid="uid://dq41u1lpo0o30" path="res://assets/models/Plant.glb" id="7_w2uen"]
 [ext_resource type="PackedScene" uid="uid://cbyuonndawlmx" path="res://assets/models/Leaf.glb" id="8_pfp4w"]
 [ext_resource type="PackedScene" uid="uid://caupehqq45uwa" path="res://assets/models/Column.glb" id="9_of2f6"]
-[ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/ImphenziaPixPal.tres" id="9_xf0pk"]
 [ext_resource type="PackedScene" uid="uid://diy0vcjuyptnl" path="res://assets/models/Bow.glb" id="10_s30dn"]
 [ext_resource type="PackedScene" uid="uid://bv2u8k5davuip" path="res://assets/models/Kiste.glb" id="11_40w8o"]
 [ext_resource type="PackedScene" uid="uid://luqowrb52amr" path="res://assets/models/Suzanne.glb" id="12_d30pr"]
@@ -98,7 +96,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.4628, 35.8426, 4.79072)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(9.135, 0, 0, 0, 9.135, 0, 0, 0, 9.135, 0, 33.8562, 59.582)
-material_override = ExtResource("9_xf0pk")
 mesh = SubResource("BoxMesh_7p7gg")
 
 [node name="Duck2" parent="." instance=ExtResource("5_rpqci")]
