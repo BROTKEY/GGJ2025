@@ -1,7 +1,7 @@
 extends Node
-
-var host = "127.0.0.1"
-var port = 42069
+@export_subgroup("Connection")
+@export var host = "127.0.0.1"
+@export var port = 42069
 var try_connect = false
 var connect_timeout = 0
 var connect_retry_sec = 5
