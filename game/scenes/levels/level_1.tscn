@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://diupi7686o45v"]
+[gd_scene load_steps=19 format=3 uid="uid://diupi7686o45v"]
 
 [ext_resource type="Environment" uid="uid://m8upo6o8q7kh" path="res://assets/defaul_env.tres" id="2_rp7ij"]
 [ext_resource type="ArrayMesh" uid="uid://bh78ywlkyxwao" path="res://assets/meshes/Rock_001.mesh" id="5_mdo7w"]
@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c0j4l1lg2id7g" path="res://assets/meshes/Kiste_001.mesh" id="15_agyyu"]
 [ext_resource type="PackedScene" uid="uid://dyyag41xwgpqd" path="res://objects/BubbleColumn.tscn" id="15_v7r28"]
 [ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="16_4w8mn"]
+[ext_resource type="PackedScene" uid="uid://dshmqmrk7ctg6" path="res://scenes/levels/music.tscn" id="18_r6jrp"]
 
 [node name="Level 1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122771, -0.0128517, 0.00444412)
@@ -2916,7 +2917,7 @@ transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, -3.79009, 5.84125, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0324135, 2.81958, 0.424149)
 
 [node name="Qualle2" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
-transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 8.66897, 4.19742, -12.177)
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 8.66897, 4.19742, -12.177)
 
 [node name="Qualle3" parent="WorldEnvironment2/Lights" instance=ExtResource("7_dxar1")]
 transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, -4.13731, 4.68244, -35.0202)
@@ -2930,7 +2931,7 @@ mesh = ExtResource("5_ohu7x")
 material = ExtResource("6_b6g6a")
 
 [node name="log" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(3.8431, 0.162823, 0.224502, -1.10933, 0.564078, 0.777756, 0, -0.809509, 0.587107, 0.662924, -2.56891, -14.4961)
+transform = Transform3D(3.8431, 0.162823, 0.224502, -1.10933, 0.564078, 0.777756, 0, -0.809509, 0.587107, 0.662924, -2.8447, -14.4961)
 use_collision = true
 mesh = ExtResource("5_ohu7x")
 material = ExtResource("6_b6g6a")
@@ -2965,7 +2966,7 @@ mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
 
 [node name="wall" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.453366, 0.883727, -0.116125, 0.0107056, 0.124875, 0.992115, 0.89126, -0.451035, 0.0471534, -5.45576, 0.18486, -17.6118)
+transform = Transform3D(0.453366, 0.883727, -0.116125, 0.0107056, 0.124875, 0.992115, 0.89126, -0.451035, 0.0471534, -5.45576, -0.0697949, -17.6118)
 use_collision = true
 mesh = ExtResource("12_5eval")
 material = ExtResource("6_b6g6a")
@@ -2976,7 +2977,7 @@ mesh = ExtResource("12_5eval")
 material = ExtResource("6_b6g6a")
 
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="WorldEnvironment2/objects/wall"]
-transform = Transform3D(0.704484, 0.709298, 0.024491, -0.705093, 0.69554, 0.138087, 0.0809101, -0.114548, 0.990117, -0.269199, 8.30034, -0.229094)
+transform = Transform3D(0.704484, 0.709298, 0.024491, -0.705093, 0.69554, 0.138087, 0.0809101, -0.114548, 0.990117, -0.273909, 8.24539, -0.665656)
 mesh = ExtResource("12_5eval")
 material = ExtResource("6_b6g6a")
 
@@ -2991,19 +2992,19 @@ mesh = ExtResource("12_5eval")
 material = ExtResource("6_b6g6a")
 
 [node name="chest" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.95042, 0.106904, 0.292016, -0.179424, 0.955495, 0.234173, -0.253986, -0.274957, 0.927303, 1.78014, 0.279747, -34.5963)
+transform = Transform3D(0.88039, -0.325053, 0.345332, 0.36181, 0.931119, -0.0459563, -0.306607, 0.165404, 0.937355, 1.78014, -0.0743402, -34.5963)
 use_collision = true
 mesh = ExtResource("15_agyyu")
 material = ExtResource("6_b6g6a")
 
 [node name="finish" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.457062, 0.00785897, -0.00841156, 0, 0.581831, 0.406443, 0.0076429, -0.469983, 0.503029, 1.9405, 0.962212, -34.7665)
+transform = Transform3D(0.457062, 0.00785897, -0.00841156, 0, 0.581831, 0.406443, 0.0076429, -0.469983, 0.503029, 1.9405, 0.180114, -34.7665)
 use_collision = true
 mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
 
 [node name="bow" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(0.98735, 0.0563576, -0.148204, 0.0296863, 0.852466, 0.521939, 0.155754, -0.519736, 0.840009, 1.14974, -1.12659, -26.5947)
+transform = Transform3D(0.98735, 0.0563576, -0.148204, 0.0296863, 0.852466, 0.521939, 0.155754, -0.519736, 0.840009, 1.14974, -1.81084, -26.5947)
 use_collision = true
 mesh = ExtResource("9_60u5n")
 
@@ -3013,7 +3014,7 @@ mesh = ExtResource("9_imask")
 material = ExtResource("6_b6g6a")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
-transform = Transform3D(3.01568, -0.249468, -0.309582, 1.2508, 0.325766, 0.865471, -0.378142, -0.911945, 0.393853, 3.99369, -1.25796, -14.0299)
+transform = Transform3D(3.01568, -0.249468, -0.309582, 1.2508, 0.325766, 0.865471, -0.378142, -0.911945, 0.393853, 3.99369, -1.60421, -14.0299)
 use_collision = true
 mesh = ExtResource("8_hfg0b")
 material = ExtResource("6_b6g6a")
@@ -3042,5 +3043,7 @@ bubble_time_s = 20
 bubble_min = 0.7
 bubble_min_plus_max = 1.3
 bubble_collider_name_starts_with = "ground"
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("18_r6jrp")]
 
 [editable path="WorldEnvironment2/Lights/Qualle"]
