@@ -6,13 +6,18 @@ uniform float smoothness: hint_range(0.0, 0.2, 0.01);
 uniform float wobble_strength: hint_range(0.0, 1.0, 0.01);
 uniform float color_intensity: hint_range(0.0, 1.0, 0.01);
 uniform float opacity: hint_range(0.0, 1.0, 0.1);
+uniform float speed: hint_range(0.0, 2.0) = 1.0;
+instance uniform float size = 1.0;
+instance uniform float noise_offset = 0.0;
 
 varying vec3 world_position;
 
 void vertex() {
 	world_position = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	float height = texture(noise_texture, VERTEX.xz * smoothness + vec2(TIME * 0.1)).r;
+	vec2 noise_crd = VERTEX.xz * smoothness + vec2(TIME * speed * 0.1) + noise_offset;
+	float height = texture(noise_texture, noise_crd).r;
 	VERTEX += NORMAL * (height - 0.5) * wobble_strength;
+	VERTEX *= size;
 }
 
 float fresnel(vec3 normal, mat4 camera_matrix) {
@@ -27,7 +32,7 @@ float fresnel(vec3 normal, mat4 camera_matrix) {
 void fragment() {
 	float fres = fresnel(NORMAL, VIEW_MATRIX);
 	ALBEDO = vec3(1.0, 1.0, 1.0)
-		- texture(color_texture, world_position.xz + vec2(TIME * 0.1)).rgb * color_intensity;
+		- texture(color_texture, world_position.xz + vec2(world_position.y + TIME * speed * 0.1)).rgb * color_intensity;
 	ALPHA = fres * opacity;
 }
 
