@@ -85,18 +85,17 @@ func handle_controls(delta: float):
 	self.handle_animations(delta)
 
 func handle_animations(delta):
+	$Model.scale = lerp($Model.scale, Vector3(1, 1, 1), delta * 9)
+	
 	var animation: AnimationPlayer = $Model/DuckAnimated/AnimationPlayer
 	var horizontal_velocity = Vector2(linear_velocity.x, linear_velocity.z)
 	var speed_factor = horizontal_velocity.length() / movement_speed / delta
-	print(speed_factor)
 	if speed_factor > 0.01:#self.on_ground:# and speed_factor > 0.05:
 		if animation.current_animation != "AnimDuck_005":
-			print('play')
 			animation.play("AnimDuck_005", 0.1)
 		animation.speed_scale = speed_factor * 100
 
 	elif animation.current_animation != "AnimDuck_001":
-		print('stop')
 		animation.play("AnimDuck_001", 0.1)
 
 func jump():
@@ -108,6 +107,9 @@ func jump():
 			force = max(0, (jump_strength - self.linear_velocity.y)) * Vector3.UP
 		self.apply_central_impulse(force)
 		air_time = coyote_time_s
+		
+		# Squish
+		$Model.scale = Vector3(0.75, 1.25, 0.75)
 
 	# TODO: fancy bouncy squishy bubble
 	#model.scale = Vector3(0.75, 1.25, 0.75)
@@ -132,7 +134,11 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		if state.get_contact_collider_object(idx).name.begins_with(death_collider_name_starts_with):
 			kill_player = true
 		var col_normal = state.get_contact_local_normal(idx)
+		var col_vel = abs(state.get_contact_local_velocity_at_position(idx).y)
 		if col_normal.y > 0.5:
+			col_vel /= 2
+			if col_vel > 2 and not (on_ground or maybe_on_ground):
+				$Model.scale = lerp(Vector3.ONE, Vector3(1.3, 0.7, 1.3), min(1, col_vel - 2))
 			maybe_on_ground = true
 	
 	on_ground = maybe_on_ground
