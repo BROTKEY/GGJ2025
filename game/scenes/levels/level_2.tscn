@@ -1,21 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://bu0etvkv4jbg6"]
+[gd_scene load_steps=17 format=3 uid="uid://bu0etvkv4jbg6"]
 
 [ext_resource type="Environment" uid="uid://m8upo6o8q7kh" path="res://assets/defaul_env.tres" id="1_mq1ep"]
 [ext_resource type="PackedScene" uid="uid://d05nrivbbs140" path="res://objects/tree.tscn" id="2_bxbjf"]
-[ext_resource type="ArrayMesh" uid="uid://pofuaytk3fjl" path="res://assets/meshes/Plant_001.mesh" id="3_2ejut"]
-[ext_resource type="ArrayMesh" uid="uid://blpmhcrqfcyo7" path="res://assets/meshes/Leaf_001.mesh" id="4_ux583"]
+[ext_resource type="ArrayMesh" uid="uid://12eedtmve7my" path="res://assets/meshes/Plant.res" id="3_2ejut"]
+[ext_resource type="ArrayMesh" uid="uid://cb61i4ue0yd7y" path="res://assets/meshes/Leaf.res" id="4_ux583"]
 [ext_resource type="Material" uid="uid://d2sac0o84lqtd" path="res://addons/pixpal_tools/Imphenzia/PixPal/Materials/M_ImphenziaPixPal.tres" id="5_jawuc"]
-[ext_resource type="ArrayMesh" uid="uid://bjou77kfn1vmn" path="res://assets/meshes/Terrain.res" id="6_mn4nl"]
+[ext_resource type="ArrayMesh" uid="uid://b0c7ptrckvqui" path="res://assets/meshes/Terrain.res" id="6_mn4nl"]
 [ext_resource type="PackedScene" uid="uid://c0jcd3705y2oe" path="res://objects/Qualle.tscn" id="7_lmwyd"]
-[ext_resource type="ArrayMesh" uid="uid://cy8plnvlf83rn" path="res://assets/meshes/stone.res" id="9_ykb5j"]
-[ext_resource type="ArrayMesh" uid="uid://bh78ywlkyxwao" path="res://assets/meshes/Rock_001.mesh" id="10_soyvn"]
-[ext_resource type="ArrayMesh" uid="uid://47g8x2ka0oup" path="res://assets/meshes/Suzanne_001.mesh" id="11_cgnyy"]
-[ext_resource type="ArrayMesh" uid="uid://xm0vsb2c6pvl" path="res://assets/meshes/Column_001.mesh" id="12_f8kuk"]
-[ext_resource type="ArrayMesh" uid="uid://cadqioc5pkmla" path="res://assets/meshes/Column_002.mesh" id="13_c2b1y"]
-[ext_resource type="ArrayMesh" uid="uid://i2wc0liqikub" path="res://assets/meshes/Column2_001.mesh" id="13_powyg"]
-[ext_resource type="ArrayMesh" uid="uid://c0j4l1lg2id7g" path="res://assets/meshes/Kiste_001.mesh" id="14_4who2"]
-[ext_resource type="ArrayMesh" uid="uid://cl0rcmr2khy7u" path="res://assets/meshes/Bow_001.mesh" id="15_6b6nc"]
-[ext_resource type="ArrayMesh" uid="uid://b5cxbktnpgntd" path="res://assets/meshes/Column1_001.mesh" id="15_pq45m"]
+[ext_resource type="ArrayMesh" uid="uid://cv7wkrfuv32kc" path="res://assets/meshes/Rock.res" id="10_soyvn"]
+[ext_resource type="ArrayMesh" uid="uid://jkjfipaeg47v" path="res://assets/meshes/Suzanne.res" id="11_cgnyy"]
+[ext_resource type="ArrayMesh" uid="uid://cvgxsivl5j6tt" path="res://assets/meshes/Column.res" id="12_f8kuk"]
+[ext_resource type="ArrayMesh" uid="uid://c8wj4apwd1omf" path="res://assets/meshes/Column2.res" id="13_powyg"]
+[ext_resource type="ArrayMesh" uid="uid://bm16woarh014q" path="res://assets/meshes/Kiste.res" id="14_4who2"]
+[ext_resource type="ArrayMesh" uid="uid://cdd6glpt3j15q" path="res://assets/meshes/Bow.res" id="15_6b6nc"]
+[ext_resource type="ArrayMesh" uid="uid://80x034yiahow" path="res://assets/meshes/Column1.res" id="15_pq45m"]
 [ext_resource type="PackedScene" uid="uid://dyyag41xwgpqd" path="res://objects/BubbleColumn.tscn" id="16_6lo42"]
 [ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="17_4u4ou"]
 
@@ -4006,7 +4004,7 @@ transform = Transform3D(0.44, 0, 0, 0, 0.44, 0, 0, 0, 0.44, 5.81816, 2.14395, 0.
 [node name="rock3" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(0.0569199, 4.58703, 0.901628, 0.00288785, 0.375333, -11.0309, -1.06822, 0.245427, 0.0182285, 7.89319, -0.649627, 13.1028)
 use_collision = true
-mesh = ExtResource("9_ykb5j")
+mesh = ExtResource("10_soyvn")
 material = ExtResource("5_jawuc")
 
 [node name="rock4" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
@@ -4057,7 +4055,7 @@ material = ExtResource("5_jawuc")
 [node name="rock6" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(0.0420587, 2.5812, -5.8309, -0.0351847, -2.02692, -7.42408, -1.02778, 0.175012, 0.0155479, -2.33092, 4.13018, 12.5493)
 use_collision = true
-mesh = ExtResource("9_ykb5j")
+mesh = ExtResource("10_soyvn")
 material = ExtResource("5_jawuc")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
@@ -4068,12 +4066,12 @@ mesh = ExtResource("15_6b6nc")
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(-0.251029, 0, 0.0237564, 0, 0.253449, 0, -0.0310626, 0, -0.191984, 1.51245, 0.378792, 13.5064)
 use_collision = true
-mesh = ExtResource("13_c2b1y")
+mesh = ExtResource("12_f8kuk")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(-0.251029, 0, 0.0237564, 0, 0.253449, 0, -0.0310626, 0, -0.191984, 3.61065, 0.389469, 13.4485)
 use_collision = true
-mesh = ExtResource("13_c2b1y")
+mesh = ExtResource("12_f8kuk")
 
 [node name="CSGMesh3D7" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(-0.99773, 0.0385664, 0.0551988, 0.0410481, 0.998163, 0.0445586, -0.0533787, 0.0467233, -0.997481, -0.84206, 0.962163, -26.3784)

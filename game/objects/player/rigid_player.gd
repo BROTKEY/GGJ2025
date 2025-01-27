@@ -53,11 +53,11 @@ func _process(delta: float) -> void:
 	if on_finish:
 		tree.change_scene_to_file("res://scenes/levels/level_" + str(tree.current_scene.name.get_slice(" ",1).to_int() + 1) + ".tscn")
 
-func handle_bubble(delta:float) -> void:
+func handle_bubble(delta: float) -> void:
 	current_bubble_time -= delta
-	var scale = current_bubble_time/ bubble_time_s * bubble_min_plus_max + bubble_min
-	$Model/Bubble/BubbleMesh.scale = Vector3(scale, scale,scale)
-	$Collider.scale = Vector3(scale,scale,scale)
+	var s = current_bubble_time/ bubble_time_s * bubble_min_plus_max + bubble_min
+	$Model/Bubble/BubbleMesh.scale = Vector3(s, s, s)
+	$Collider.scale = Vector3(s, s, s)
 	
 	if current_bubble_time < 0:
 		kill_player = true
@@ -68,7 +68,7 @@ func handle_controls(delta: float):
 	input.x = Input.get_axis("move_left", "move_right")
 	input.z = Input.get_axis("move_forward", "move_back")
 
-	var input_force = input * movement_speed * delta * (1 if on_ground else sv_airaccelerate_pct)
+	var input_force = input * movement_speed * delta * (1.0 if on_ground else sv_airaccelerate_pct)
 	var predicted_vel = self.linear_velocity + input_force.normalized() * 0.01
 	var vel = linear_velocity.length()
 	var pred_vel = predicted_vel.length()
@@ -111,7 +111,6 @@ func handle_animations(delta):
 
 func jump():
 	if air_time < coyote_time_s:
-		var cur_yf = self.linear_velocity.y
 		var force = jump_strength * Vector3.UP
 		var pred_force = self.linear_velocity + force
 		if pred_force.y > jump_strength:

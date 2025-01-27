@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d05nrivbbs140"]
 
-[ext_resource type="ArrayMesh" uid="uid://pofuaytk3fjl" path="res://assets/meshes/Plant_001.mesh" id="2_5888d"]
+[ext_resource type="ArrayMesh" uid="uid://12eedtmve7my" path="res://assets/meshes/Plant.res" id="2_5888d"]
 
 [node name="tree" type="Node3D"]
 

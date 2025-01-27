@@ -71,7 +71,7 @@ func average_corners(last_x: int=0):
 	return avg_corners
 
 # Switches between sending x and y data since you can't send both in the same frame
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	send_half = !send_half
 	var corners = average_corners(2)
 	if send_half:

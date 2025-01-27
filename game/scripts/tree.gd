@@ -1,8 +1,8 @@
 @tool
 extends EditorScript
 
-var wood: Mesh = load("res://assets/meshes/Plant_001.mesh")
-var leaf: Mesh = load("res://assets/meshes/Leaf_001.mesh")
+var wood: Mesh = load("res://assets/meshes/Plant.res")
+var leaf: Mesh = load("res://assets/meshes/Leaf.res")
 var max_depth: int = 2
 var splits_min: int = 5
 var splits_max: int = 9

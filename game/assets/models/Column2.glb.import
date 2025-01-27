@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b30dnur6365yi"
+uid="uid://bkjvotqfdntnu"
 path="res://.godot/imported/Column2.glb-f336cef25df835d968070a64ddc47a6b.scn"
 
 [deps]
@@ -32,5 +32,6 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
+glb_export_mesh=true
 gltf/naming_version=1
 gltf/embedded_image_handling=0

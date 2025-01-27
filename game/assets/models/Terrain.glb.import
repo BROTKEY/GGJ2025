@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j74vsr7iyg0a"
+uid="uid://c2eik0vlw4mhd"
 path="res://.godot/imported/Terrain.glb-4ede13a2537d7ddcd00138256e710b74.scn"
 
 [deps]
@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/Terrain.glb-4ede13a2537d7ddcd00138256e710b74.
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Terrain"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -31,18 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"Terrain_Plane_035": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://assets/models/meshes/Terrain.res"
-}
-}
-}
+_subresources={}
+glb_export_mesh=true
 gltf/naming_version=1
 gltf/embedded_image_handling=0

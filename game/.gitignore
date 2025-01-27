@@ -3,9 +3,5 @@
 /android/
 build/
 
-# Don't commit extracted PNGs
-/assets/models/*.png
-/assets/models/*.png.import
-
 # Temporary DLL files
 /addons/godot-git-plugin/win64/~*.dll

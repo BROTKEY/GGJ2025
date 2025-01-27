@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dq41u1lpo0o30"
+uid="uid://dhbs5eev4ehmm"
 path="res://.godot/imported/Plant.glb-01ced486265c6bceb46f1c2dbe507ad9.scn"
 
 [deps]
@@ -31,13 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"ImphenziaPixPal": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/models/meshes/Plant.res"
-}
-}
-}
+_subresources={}
+glb_export_mesh=true
 gltf/naming_version=1
 gltf/embedded_image_handling=0

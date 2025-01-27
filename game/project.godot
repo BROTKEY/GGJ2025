@@ -19,14 +19,18 @@ config/icon="res://icon.svg"
 
 MusicPlayer="*res://objects/MusicPlayer.tscn"
 
-[editor]
+[editor_plugins]
 
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
+enabled=PackedStringArray("res://addons/glb_import_fix/plugin.cfg")
 
 [importer_defaults]
 
 animation_library={
+"fbx/embedded_image_handling": 0,
+"gltf/embedded_image_handling": 0
+}
+scene={
+"fbx/embedded_image_handling": 0,
 "gltf/embedded_image_handling": 0
 }
 

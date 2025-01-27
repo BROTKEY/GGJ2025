@@ -50,7 +50,7 @@ func spawn_bubble():
 	$Model/Bubbles.add_child(bubble)
 	bubble.owner = self
 
-func process_bubbles(delta: float):
+func process_bubbles(_delta: float):
 	var to_remove = Array()
 	for bubble in $Model/Bubbles.get_children():
 		if bubble.size < 0.1 or bubble.position.y > self.max_height:

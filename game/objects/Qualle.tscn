@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0jcd3705y2oe"]
 
-[ext_resource type="ArrayMesh" uid="uid://c8k8kjg5n4ebt" path="res://assets/models/meshes/Quallenkopf.res" id="1_fwmfx"]
+[ext_resource type="ArrayMesh" uid="uid://63ek4wf8il2i" path="res://assets/meshes/Quallenkopf.res" id="1_fwmfx"]
 [ext_resource type="Material" uid="uid://bdhtaciaxdwyc" path="res://assets/materials/quallenkopf_mat.tres" id="1_taof7"]
 [ext_resource type="Material" uid="uid://x2u7fbh5x3ej" path="res://assets/materials/quallenfuss_mat.tres" id="2_rq7k0"]
-[ext_resource type="ArrayMesh" uid="uid://t3ukwnu3ih2j" path="res://assets/models/meshes/Quallenfuss.res" id="3_r0073"]
+[ext_resource type="ArrayMesh" uid="uid://bb6exre62s13q" path="res://assets/meshes/Quallenfuss.res" id="3_r0073"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_g1qq2"]
 height = 7.32735
