@@ -2583,6 +2583,7 @@ material = ExtResource("6_b6g6a")
 transform = Transform3D(0.98735, 0.0563576, -0.148204, 0.0296863, 0.852466, 0.521939, 0.155754, -0.519736, 0.840009, 1.14974, -1.81084, -26.5947)
 use_collision = true
 mesh = ExtResource("9_60u5n")
+material = ExtResource("6_b6g6a")
 
 [node name="Monke2" type="CSGMesh3D" parent="WorldEnvironment2/objects"]
 transform = Transform3D(-0.212306, 0.195446, 0.183237, 0.0182745, -0.214722, 0.262108, 0.275129, 0.16508, 0.123986, -4.51739, 0.538152, -30.8342)
