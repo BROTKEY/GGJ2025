@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6b6uchgd58t5"]
+[gd_scene load_steps=7 format=3 uid="uid://c6b6uchgd58t5"]
 
 [ext_resource type="PackedScene" uid="uid://c7s62r8gd4cn8" path="res://objects/player/RigidPlayer.tscn" id="1_6ywhc"]
-[ext_resource type="PackedScene" uid="uid://dshmqmrk7ctg6" path="res://scenes/levels/music.tscn" id="2_xuiwb"]
 
 [sub_resource type="Environment" id="Environment_m7mx5"]
 
@@ -48,5 +47,3 @@ shape = SubResource("ConvexPolygonShape3D_grj1j")
 transform = Transform3D(0.88718, -0.428649, -0.170797, 0, -0.370152, 0.928971, -0.461423, -0.824165, -0.328392, 0, 11.441, 0)
 light_color = Color(0, 0.854902, 1, 1)
 shadow_enabled = true
-
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("2_xuiwb")]
