@@ -116,7 +116,6 @@ func handle_animations(delta):
 			model.rotation.y -= 2*PI
 		elif model.rotation.y < -PI:
 			model.rotation.y += 2*PI
-		print(model.rotation.y)
 	
 	# Walking Animation
 	var animation: AnimationPlayer = $Model/DuckAnimated/AnimationPlayer
