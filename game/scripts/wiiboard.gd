@@ -126,6 +126,8 @@ func _process(delta: float) -> void:
 	if status == client.STATUS_CONNECTED:
 		if client.get_available_bytes() > 0:
 			parse_data(client.get_utf8_string(), delta)
+			# Flush remaining packets
+			client.get_partial_data(1024)
 	
 	if Input.is_action_just_pressed("rekalibrate"):
 		calibrate_weight()

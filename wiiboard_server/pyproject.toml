@@ -8,6 +8,7 @@ authors = ["Hwawooook <hwawooook@miningxl.dev>"]
 launch_board_server = "wiiboard_server.wiiboard_server:main"
 launch_plotter = "wiiboard_server.wiiboard_plotter:main"
 launch_center_plotter = "wiiboard_server.wiiboard_com_plotter:main"
+launch_board_printer = "wiiboard_server.wiiboard.wiiboard:main"
 
 [tool.poetry.dependencies]
 python = "3.10"

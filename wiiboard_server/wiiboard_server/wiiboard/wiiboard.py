@@ -12,7 +12,14 @@ LICENSE LGPL <http://www.gnu.org/licenses/lgpl.html>
 import time
 import logging
 import collections
-import bluetooth
+import os
+
+WIN = os.name == 'nt'
+if WIN:
+    from .wiindows import WinBT, discover_devices as discover_win
+else:
+    import bluetooth
+
 
 # Wiiboard Parameters
 CONTINUOUS_REPORTING    = b'\x04'
@@ -33,10 +40,17 @@ BOTTOM_RIGHT            = 1
 TOP_LEFT                = 2
 BOTTOM_LEFT             = 3
 BLUETOOTH_NAME          = "Nintendo RVL-WBC-01"
+BLUETOOTH_PRODUCT_NAME  = "Nintendo RVL-CNT-01"
 # WiiboardSampling Parameters
 N_SAMPLES               = 200
 N_LOOP                  = 10
 T_SLEEP                 = 2
+
+if WIN:
+    REPORT_OFFSET = 0
+else:
+    REPORT_OFFSET = 1
+PACKET_SIZE = 22 + REPORT_OFFSET
 
 # initialize the logger
 logger = logging.getLogger(__name__)
@@ -46,17 +60,30 @@ logger.addHandler(handler)
 logger.setLevel(logging.INFO) # or DEBUG
 
 b2i = lambda b: int.from_bytes(b, "big")
+# b2i = lambda b: int.from_bytes(b, 'little')
 
-def discover(duration=6, prefix=BLUETOOTH_NAME):
+def discover(duration, prefix):
     logger.info("Scan Bluetooth devices for %i seconds...", duration)
     devices = bluetooth.discover_devices(duration=duration, lookup_names=True)
     logger.debug("Found devices: %s", str(devices))
     return [address for address, name in devices if name.startswith(prefix)]
 
+def discover_wiiboards(duration=6):
+    if WIN:
+        return [dev.device_path for dev in discover_win(product_name=BLUETOOTH_PRODUCT_NAME)]
+    else:
+        return discover(duration, prefix=BLUETOOTH_NAME)
+
 class Wiiboard:
     def __init__(self, address=None):
-        self.controlsocket = bluetooth.BluetoothSocket(bluetooth.L2CAP)
-        self.receivesocket = bluetooth.BluetoothSocket(bluetooth.L2CAP)
+        """For Windows: address is HID device path"""
+        if WIN:
+            self.controlsocket = WinBT()
+            self.receivesocket = self.controlsocket
+            # self.receivesocket = WinBT()
+        else:
+            self.controlsocket = bluetooth.BluetoothSocket(bluetooth.Protocols.L2CAP)
+            self.receivesocket = bluetooth.BluetoothSocket(bluetooth.Protocols.L2CAP)
         self.calibration = [[1e4]*4]*3
         self.calibration_requested = False
         self.calibrated = False
@@ -68,9 +95,14 @@ class Wiiboard:
             self.connect(address)
 
     def connect(self, address):
+        """For Windows: address is HID device path"""
         logger.info("Connecting to %s", address)
-        self.controlsocket.connect((address, 0x11))
-        self.receivesocket.connect((address, 0x13))
+        if WIN:
+            self.controlsocket.connect(address)
+            # self.receivesocket.connect(address)
+        else:
+            self.controlsocket.connect((address, 0x11))
+            self.receivesocket.connect((address, 0x13))
         logger.info("Press the Button to re-calibrate")
         self.calibrate()
         logger.debug("Connect to the balance extension, to read mass data")
@@ -87,10 +119,16 @@ class Wiiboard:
         self.calibration_requested = True
         logger.info("Wait for calibration")
 
-    def send(self, *data):
-        databytes = b'\x52' + b''.join(data)
-        logger.debug("Sending Bytes: %r", data)
-        self.controlsocket.send(databytes)
+    if WIN:
+        def send(self, *data):
+            databytes = b''.join(data) # No extra 0x52 for Windows
+            logger.debug("Sending Bytes: %r", data)
+            self.controlsocket.send(databytes)
+    else:
+        def send(self, *data):
+            databytes = b'\x52' + b''.join(data)
+            logger.debug("Sending Bytes: %r", data)
+            self.controlsocket.send(databytes)
 
     def reporting(self, mode=CONTINUOUS_REPORTING, extension=EXTENSION_8BYTES):
         self.send(COMMAND_REPORTING, mode, extension)
@@ -135,25 +173,26 @@ class Wiiboard:
             'top_left':     self.calc_mass(b2i(data[4:6]), TOP_LEFT),
             'bottom_left':  self.calc_mass(b2i(data[6:8]), BOTTOM_LEFT),
         }
-        
+    
     def loop(self):
         logger.debug("Starting the receive loop")
         while self.running and self.receivesocket:
-            data = self.receivesocket.recv(25)
-            logger.debug("socket.recv(25): %r", data)
-            if len(data) < 2:
+            data = self.receivesocket.recv(PACKET_SIZE)
+            logger.debug("socket.recv(%d): %r", PACKET_SIZE, data)
+            if len(data) < (REPORT_OFFSET + 1):
                 continue
-            input_type = data[1]
+            data = data[REPORT_OFFSET:]
+            input_type = data[0]
             if input_type == INPUT_STATUS:
-                self.battery = b2i(data[7:9]) / BATTERY_MAX
+                self.battery = b2i(data[6:8]) / BATTERY_MAX
                 # 0x12: on, 0x02: off/blink
-                self.light_state = data[4] & LED1_MASK == LED1_MASK
+                self.light_state = data[3] & LED1_MASK == LED1_MASK
                 self.on_status()
             elif input_type == INPUT_READ_DATA:
                 logger.debug("Got calibration data")
                 if self.calibration_requested:
-                    length = int(data[4] / 16 + 1)
-                    data = data[7:7 + length]
+                    length = int(data[3] / 16 + 1)
+                    data = data[6:6 + length]
                     cal = lambda d: [b2i(d[j:j+2]) for j in [0, 2, 4, 6]]
                     if length == 16: # First packet of calibration data
                         self.calibration = [cal(data[0:8]), cal(data[8:16]), [1e4]*4]
@@ -163,8 +202,10 @@ class Wiiboard:
                         self.calibrated = True
                         self.on_calibrated()
             elif input_type == 0x32: # TODO: Do this properly
-                self.check_button(b2i(data[2:4]))
-                self.on_mass(self.get_mass(data[4:12]))
+                self.check_button(b2i(data[1:3]))
+                self.on_mass(self.get_mass(data[3:11]))
+            else:
+                logger.warning(f'Unknown input type 0x{input_type:02x}')
 
     def on_status(self):
         self.reporting() # Must set the reporting type after every status report
@@ -231,7 +272,7 @@ class WiiboardPrint(WiiboardSampling):
                 return self.close()
             time.sleep(T_SLEEP)
 
-if __name__ == '__main__':
+def main():
     import sys
     if '-d' in sys.argv:
         logger.setLevel(logging.DEBUG)
@@ -239,10 +280,13 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         address = sys.argv[1]
     else:
-        wiiboards = discover()
-        logger.info("Found wiiboards: %s", str(wiiboards))
+        wiiboards = discover_wiiboards()
+        logger.info(f"Found {len(wiiboards)} wiiboards: {wiiboards}")
         if not wiiboards:
             raise Exception("Press the red sync button on the board")
         address = wiiboards[0]
     with WiiboardPrint(address) as wiiprint:
         wiiprint.loop()
+
+if __name__ == '__main__':
+    main()

@@ -28,6 +28,13 @@ class WiiPlotter:
                 self.running = False
                 break
 
+            self.sock.setblocking(False)
+            try:
+                _trash = self.sock.recv(1024)
+            except BlockingIOError:
+                pass
+            self.sock.setblocking(True)
+
             data = str(data, "utf-8")
 
             corners = [float(i) for i in data.split(";")]

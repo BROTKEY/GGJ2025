@@ -1,6 +1,8 @@
-from wiiboard_server.wiiboard.wiiboard import Wiiboard, discover
+import os
 from threading import Thread
 import socket, time
+
+from wiiboard_server.wiiboard.wiiboard import Wiiboard, discover_wiiboards
 
 TRANSMIT_RATE_S = 0.02
 
@@ -55,12 +57,11 @@ class BoardSocket(Wiiboard):
         self.running = False
         self.sock.close()
         return super().__del__()
-
+    
 def main():
-    wii_boards = discover(6)
+    wii_boards = discover_wiiboards()
     if not wii_boards:
         raise Exception("No Wii Fit Balanceboards found!")
-    
     server = BoardSocket(wii_boards[0])
     server.run()
 
