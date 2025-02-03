@@ -14,6 +14,7 @@ launch_board_printer = "wiiboard_server.wiiboard.wiiboard:main"
 python = "3.10"
 pybluez = { git = "git+https://github.com/pybluez/pybluez.git#egg=pybluez" }
 matplotlib = "3.10.0"
+pywinusb = { version = "*", markers = "sys_platform == 'win32'"}
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.4"
